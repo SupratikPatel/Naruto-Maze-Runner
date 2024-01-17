@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/fophn2324infun2324projectworkx-teamutilrandom.iml" filepath="$PROJECT_DIR$/.idea/fophn2324infun2324projectworkx-teamutilrandom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/fophn2324infun2324projectworkx-teamutilrandom.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/fophn2324infun2324projectworkx-teamutilrandom.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/fophn2324infun2324projectworkx-teamutilrandom.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/fophn2324infun2324projectworkx-teamutilrandom.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/fophn2324infun2324projectworkx-teamutilrandom.core.test.iml" filepath="$PROJECT_DIR$/.idea/modules/core/fophn2324infun2324projectworkx-teamutilrandom.core.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/fophn2324infun2324projectworkx-teamutilrandom.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/fophn2324infun2324projectworkx-teamutilrandom.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/fophn2324infun2324projectworkx-teamutilrandom.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/fophn2324infun2324projectworkx-teamutilrandom.desktop.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/fophn2324infun2324projectworkx-teamutilrandom.desktop.test.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/fophn2324infun2324projectworkx-teamutilrandom.desktop.test.iml" />
+    </modules>
+  </component>
+</project>
