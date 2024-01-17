@@ -1,6 +1,6 @@
 package de.tum.cit.ase.maze.GameComponents;
 
-public enum CellType {
+public enum BlocksType {
     WALL,
     ENTRY_POINT,
     EXIT,
@@ -8,7 +8,7 @@ public enum CellType {
     ENEMY,
     KEY;
 
-    public static CellType fromId(int x) {
+    public static BlocksType fromId(int x) {
         switch(x) {
             case 0:
                 return WALL;
