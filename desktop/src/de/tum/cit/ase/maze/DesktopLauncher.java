@@ -24,8 +24,8 @@ public class  DesktopLauncher  {
 		Graphics.DisplayMode displayMode = Lwjgl3ApplicationConfiguration.getDisplayMode();
 		// Set the window size to 80% of the screen width and height
 		config.setWindowedMode(
-				Math.round(0.8f * displayMode.width),
-				Math.round(0.8f * displayMode.height)
+				     Math.round(0.8f * displayMode.width),
+			      	Math.round(0.8f * displayMode.height)
 		);
 		config.useVsync(true); // Enable vertical sync
 		config.setForegroundFPS(60); // Set the foreground frames per second
