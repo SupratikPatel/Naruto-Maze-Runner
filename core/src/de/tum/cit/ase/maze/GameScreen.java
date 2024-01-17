@@ -11,7 +11,7 @@ import com.badlogic.gdx.utils.ScreenUtils;
  * The GameScreen class is responsible for rendering the gameplay screen.
  * It handles the game logic and rendering of the game elements.
  */
-public class GameScreen implements Screen {
+public class GameScreen  implements Screen {
 
     private final MazeRunnerGame game;
     private final OrthographicCamera camera;
