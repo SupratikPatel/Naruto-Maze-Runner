@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Trap, key and enenmy- SuperSU">
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Maps.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/Manager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SpriteSheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Game.xml" afterDir="false" />
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added utilities- SuperSU">
+      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Blocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Blocks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/BlocksType.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/BlocksType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/GameEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/GameEntities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/MazeRunnerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MazeRunnerGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/MenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop/src/de/tum/cit/ase/maze/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/de/tum/cit/ase/maze/DesktopLauncher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,33 +55,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Run Game.executor": "Run",
-    "Gradle.Build fophn2324infun2324projectworkx-teamutilrandom.executor": "Run",
-    "Gradle.fophn2324infun2324projectworkx-teamutilrandom:desktop [:desktop:DesktopLauncher.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/JAVA/fophn2324infun2324projectworkx-teamutilrandom",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Run Game.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build fophn2324infun2324projectworkx-teamutilrandom.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.fophn2324infun2324projectworkx-teamutilrandom:desktop [:desktop:DesktopLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JAVA/fophn2324infun2324projectworkx-teamutilrandom&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -111,7 +100,10 @@
       <workItem from="1705521779426" duration="306000" />
       <workItem from="1705524086087" duration="274000" />
       <workItem from="1705525843263" duration="48000" />
-      <workItem from="1705531009775" duration="7673000" />
+      <workItem from="1705531009775" duration="7848000" />
+      <workItem from="1705595370486" duration="30000" />
+      <workItem from="1705605785190" duration="2644000" />
+      <workItem from="1705615728216" duration="2166000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -145,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705533689844</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added utilities- SuperSU">
+      <option name="closed" value="true" />
+      <created>1705543451786</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1705543451786</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,6 +166,7 @@
     <MESSAGE value="test" />
     <MESSAGE value="Blocks and its type- SuperSU" />
     <MESSAGE value="Trap, key and enenmy- SuperSU" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trap, key and enenmy- SuperSU" />
+    <MESSAGE value="Added utilities- SuperSU" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added utilities- SuperSU" />
   </component>
 </project>

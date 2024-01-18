@@ -8,7 +8,7 @@ public enum BlocksType {
     ENEMY,
     KEY;
 
-    public static BlocksType fromId(int x) {
+    public static BlocksType blocksType(int x) {
         return switch (x) {
             case 0 -> WALL;
             case 1 -> ENTRY_POINT;
