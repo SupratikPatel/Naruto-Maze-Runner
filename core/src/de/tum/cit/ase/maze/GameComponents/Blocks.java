@@ -1,5 +1,7 @@
 package de.tum.cit.ase.maze.GameComponents;
 
+import de.tum.cit.ase.maze.Utilities.Rectangle;
+
 import java.awt.*;
 
 public class Blocks {

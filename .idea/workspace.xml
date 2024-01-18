@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Blocks and its type- SuperSU" />
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Trap, key and enenmy- SuperSU">
+      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Maps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SpriteSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Game.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Blocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Blocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/BlocksType.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/BlocksType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/GameEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/GameEntities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/MazeRunnerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MazeRunnerGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/MenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/src/de/tum/cit/ase/maze/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/de/tum/cit/ase/maze/DesktopLauncher.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +74,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
@@ -95,7 +111,7 @@
       <workItem from="1705521779426" duration="306000" />
       <workItem from="1705524086087" duration="274000" />
       <workItem from="1705525843263" duration="48000" />
-      <workItem from="1705531009775" duration="1349000" />
+      <workItem from="1705531009775" duration="7673000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -121,7 +137,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705532514703</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Trap, key and enenmy- SuperSU">
+      <option name="closed" value="true" />
+      <created>1705533689844</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705533689844</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +165,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
     <MESSAGE value="Blocks and its type- SuperSU" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blocks and its type- SuperSU" />
+    <MESSAGE value="Trap, key and enenmy- SuperSU" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trap, key and enenmy- SuperSU" />
   </component>
 </project>

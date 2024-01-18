@@ -6,7 +6,7 @@
     <module name="fophn2324infun2324projectworkx-teamutilrandom.desktop.main" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="de.tum.cit.ase.maze.*" />
+        <option name="PATTERN" value="de.tum.cit.ase.maze.Screens.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

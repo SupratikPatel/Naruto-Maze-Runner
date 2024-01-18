@@ -1,4 +1,4 @@
-package de.tum.cit.ase.maze;
+package de.tum.cit.ase.maze.Screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
