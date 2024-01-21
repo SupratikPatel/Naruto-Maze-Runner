@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added utilities- SuperSU">
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Player.java" afterDir="false" />
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added Player movement- SuperSU">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/BlocksType.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/BlocksType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,7 +101,7 @@
       <workItem from="1705531009775" duration="7848000" />
       <workItem from="1705595370486" duration="30000" />
       <workItem from="1705605785190" duration="2644000" />
-      <workItem from="1705615728216" duration="2166000" />
+      <workItem from="1705615728216" duration="3094000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -145,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705543451786</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Player movement- SuperSU">
+      <option name="closed" value="true" />
+      <created>1705619785728</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1705619785728</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +173,7 @@
     <MESSAGE value="Blocks and its type- SuperSU" />
     <MESSAGE value="Trap, key and enenmy- SuperSU" />
     <MESSAGE value="Added utilities- SuperSU" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added utilities- SuperSU" />
+    <MESSAGE value="Added Player movement- SuperSU" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Player movement- SuperSU" />
   </component>
 </project>
