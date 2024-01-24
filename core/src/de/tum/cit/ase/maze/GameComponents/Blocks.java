@@ -2,17 +2,15 @@ package de.tum.cit.ase.maze.GameComponents;
 
 import de.tum.cit.ase.maze.Utilities.Rectangle;
 
-import java.awt.*;
-
 public class Blocks {
     private int row;
     private int column;
-    private BlocksType blocksType;
+    private BlockType blockType;
 
-    public Blocks(int row, int column, BlocksType blocksType) {
+    public Blocks(int row, int column, BlockType blockType) {
         this.row = row;
         this.column = column;
-        this.blocksType = blocksType;
+        this.blockType = blockType;
     }
 
     public int getRow() {
@@ -31,12 +29,12 @@ public class Blocks {
         this.column = column;
     }
 
-    public BlocksType getBlocksType() {
-        return blocksType;
+    public BlockType getBlocksType() {
+        return blockType;
     }
 
-    public void setBlocksType(BlocksType blocksType) {
-        this.blocksType = blocksType;
+    public void setBlocksType(BlockType blockType) {
+        this.blockType = blockType;
     }
     public Rectangle rectangle(){
         return new Rectangle(column*16,row*16,16,16);
