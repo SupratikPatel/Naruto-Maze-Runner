@@ -1,13 +1,13 @@
 package de.tum.cit.ase.maze.GameComponents;
 
-import de.tum.cit.ase.maze.Utilities.Rectangle;
+import de.tum.cit.ase.maze.Utilities.BoundingBox;
 
-public class Blocks {
+public class Block {
     private int row;
     private int column;
     private BlockType blockType;
 
-    public Blocks(int row, int column, BlockType blockType) {
+    public Block(int row, int column, BlockType blockType) {
         this.row = row;
         this.column = column;
         this.blockType = blockType;
@@ -36,7 +36,7 @@ public class Blocks {
     public void setBlocksType(BlockType blockType) {
         this.blockType = blockType;
     }
-    public Rectangle rectangle(){
-        return new Rectangle(column*16,row*16,16,16);
+    public BoundingBox rectangle(){
+        return new BoundingBox(column*16,row*16,16,16);
     }
 }
