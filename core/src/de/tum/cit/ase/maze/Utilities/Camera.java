@@ -1,7 +1,6 @@
 package de.tum.cit.ase.maze.Utilities;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.maps.Map;
 import com.badlogic.gdx.math.Vector2;
 import de.tum.cit.ase.maze.GameComponents.Maps;
 

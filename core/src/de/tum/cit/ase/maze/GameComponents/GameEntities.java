@@ -3,7 +3,7 @@ package de.tum.cit.ase.maze.GameComponents;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
-import de.tum.cit.ase.maze.Utilities.Rectangle;
+import de.tum.cit.ase.maze.Utilities.BoundingBox;
 
 public class GameEntities {
     protected Vector2 position;
@@ -27,8 +27,8 @@ public class GameEntities {
         this.position = position;
     }
 
-    public Rectangle rectangle(){
-        return new Rectangle(position.x, position.y, texture.getWidth(), texture.getHeight());
+    public BoundingBox rectangle(){
+        return new BoundingBox(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
     public void draw(Batch batch){
         batch.begin();
