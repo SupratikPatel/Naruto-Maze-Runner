@@ -200,7 +200,7 @@ public class Player extends GameEntities{
     public void shoot(List<GameEntities> objects){
         if(shooting){
             bulletCount--;
-            objects.add(new BulletProps(new Vector2(position.x,position.y),new Vector2(facing_direction.x,facing_direction.y)));
+            objects.add(new Bullet(new Vector2(position.x,position.y),new Vector2(facing_direction.x,facing_direction.y)));
             shooting = false;
             Manager.getInstance().soundManager.play("shoot",0.2f);
         }

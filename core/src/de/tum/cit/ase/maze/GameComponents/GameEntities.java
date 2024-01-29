@@ -27,7 +27,7 @@ public class GameEntities {
         this.position = position;
     }
 
-    public BoundingBox rectangle(){
+    public BoundingBox getRect(){
         return new BoundingBox(position.x, position.y, texture.getWidth(), texture.getHeight());
     }
     public void draw(Batch batch){
