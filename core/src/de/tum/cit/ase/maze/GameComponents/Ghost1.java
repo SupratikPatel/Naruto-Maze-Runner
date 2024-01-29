@@ -19,7 +19,7 @@ public class Ghost1 extends Enemy{
     private Vector2 target,vel;
     private float speed;
     private int currentTargetIndex;
-    private int scaleX = 1;
+     private int scaleX = 1;
 
     public Ghost1(Vector2 pos, Maps map) {
         super(pos, null);
