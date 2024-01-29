@@ -9,10 +9,7 @@ public class BoundingBox {
         this.w = w;
         this.h = h;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> a03cb57cacd144ea0e309fd0ecd27b2ba58c5d59
     public boolean collide(BoundingBox b) {
         BoundingBox boundingBox = this;
         return b.x < boundingBox.x + boundingBox.w &&
