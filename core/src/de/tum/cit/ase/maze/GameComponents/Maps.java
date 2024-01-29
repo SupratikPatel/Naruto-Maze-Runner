@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
+
+
+
 /**
  * Represents the game map in a maze runner game.
  * This class is responsible for loading map properties from a file, initializing the map grid,
