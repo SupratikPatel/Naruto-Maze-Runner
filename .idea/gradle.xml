@@ -12,7 +12,16 @@
             <option value="$PROJECT_DIR$/desktop" />
           </set>
         </option>
-        <option name="resolveExternalAnnotations" value="false" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/desktop" />
+          </set>
+        </option>
       </GradleProjectSettings>
     </option>
   </component>

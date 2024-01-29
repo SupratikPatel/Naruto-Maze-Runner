@@ -1,13 +1,24 @@
 package de.tum.cit.ase.maze.GameComponents;
 
+/**
+ * Enum representing the different types of blocks in a maze runner game.
+ * Each enum constant represents a distinct type of block within the game.
+ */
 public enum BlockType {
-    WALL,
-    ENTRY_POINT,
-    EXIT,
-    TRAP,
-    ENEMY,
-    KEY;
+    WALL,           // Represents a wall block that players cannot pass through.
+    ENTRY_POINT,    // Represents the starting point of the maze.
+    EXIT,           // Represents the exit point of the maze.
+    TRAP,           // Represents a trap block that may hinder the player.
+    ENEMY,          // Represents a block containing an enemy.
+    KEY;            // Represents a block containing a key to unlock parts of the maze.
 
+    /**
+     * Returns the corresponding BlockType based on an integer value.
+     * This method is typically used for mapping numeric data (e.g., from a file) to block types.
+     *
+     * @param x The integer value representing a block type.
+     * @return The corresponding BlockType, or null if the integer does not match any block type.
+     */
     public static BlockType blockCaseType(int x) {
         return switch (x) {
             case 0 -> WALL;
