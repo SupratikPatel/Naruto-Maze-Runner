@@ -8,7 +8,8 @@ public class BoundingBox {
         this.y = y;
         this.w = w;
         this.h = h;
-     }
+    }
+
     public boolean collide(BoundingBox b) {
         BoundingBox boundingBox = this;
         return b.x < boundingBox.x + boundingBox.w &&
