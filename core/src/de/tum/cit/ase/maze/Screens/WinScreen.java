@@ -1,7 +1,9 @@
 package de.tum.cit.ase.maze.Screens;
 
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -12,59 +14,49 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
-import de.tum.cit.ase.maze.Utilities.Manager;
 
 /**
  * The MenuScreen class is responsible for displaying the main menu of the game.
  * It extends the LibGDX Screen class and sets up the UI components for the menu.
  */
-public class MenuScreen implements Screen {
-    private Stage stage;
-    private final MazeRunnerGame game;
+public class WinScreen implements Screen {
 
-    public MenuScreen(MazeRunnerGame game) {
-        this.game = game;
-        initializeStage();
-        setupUI();
-    }
+    private final Stage stage;
 
-    private void initializeStage() {
-        OrthographicCamera camera = new OrthographicCamera();
-        camera.zoom = 1.5f;
-        Viewport viewport = new ScreenViewport(camera);
-        stage = new Stage(viewport, game.getSpriteBatch());
-    }
+    /**
+     * Constructor for MenuScreen. Sets up the camera, viewport, stage, and UI elements.
+     *
+     * @param game The main game class, used to access global resources and methods.
+     */
+    public WinScreen(MazeRunnerGame game, int score, float time) {
+        var camera = new OrthographicCamera();
+        camera.zoom = 1.5f; // Set camera zoom for a closer view
 
-    private void setupUI() {
-        Table table = new Table();
-        table.setFillParent(true);
-        stage.addActor(table);
+        Viewport viewport = new ScreenViewport(camera); // Create a viewport with the camera
+        stage = new Stage(viewport, game.getSpriteBatch()); // Create a stage for UI elements
 
-        table.add(new Label("Game", game.getSkin(), "title")).padBottom(80).row();
+        Table table = new Table(); // Create a table for layout
+        table.setFillParent(true); // Make the table fill the stage
+        stage.addActor(table); // Add the table to the stage
 
-        TextButton playButton = new TextButton("Play", game.getSkin());
-        TextButton loadGameButton = new TextButton("Load", game.getSkin());
-        TextButton exitButton = new TextButton("Quit", game.getSkin());
+        // Add a label as a title
+        Label gameOverLabel = new Label("You win!", game.getSkin(), "title");
+        Label scoreLabel = new Label("Score: " + score, game.getSkin(), "title");
+        Label timeLabel = new Label("Time: " + String.format("%.2fs",time), game.getSkin(), "title");
+        gameOverLabel.setColor(Color.GREEN);
+        table.add(gameOverLabel).padBottom(80).row();
+        table.add(scoreLabel).padBottom(80).row();
+        table.add(timeLabel).padBottom(80).row();
 
-        table.add(playButton).width(300);
-        table.add(loadGameButton).width(300);
-        table.add(exitButton).width(300).row();
-
-        playButton.addListener(new ChangeListener() {
+        // Create and add a button to go to the game screen
+        TextButton goToGameButton = new TextButton("Menu", game.getSkin());
+        table.add(goToGameButton).width(300).row();
+        goToGameButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                game.goToGame();
+                game.goToMenu(); // Change to the game screen when button is pressed
             }
         });
-
-        loadGameButton.addListener(new ChangeListener() {
-            @Override
-            public void changed(ChangeEvent event, Actor actor) {
-                game.loadGame();
-            }
-        });
-
-        Manager.getInstance().soundManager.playMenuMusic();
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
 import de.tum.cit.ase.maze.Utilities.BoundingBox;
 
-public class GameEntities {
+public class  GameEntities {
     protected Vector2 position;
     Texture texture;
     public boolean destroyFlAG=false;

@@ -2,7 +2,7 @@ package de.tum.cit.ase.maze.Screens;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -10,6 +10,11 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.Array;
 import games.spooky.gdx.nativefilechooser.NativeFileChooser;
+import games.spooky.gdx.nativefilechooser.NativeFileChooserCallback;
+import games.spooky.gdx.nativefilechooser.NativeFileChooserConfiguration;
+
+import java.io.File;
+import java.io.FilenameFilter;
 
 /**
  * The MazeRunnerGame class represents the core of the Maze Runner game.
@@ -19,6 +24,8 @@ public class MazeRunnerGame extends Game {
     // Screens
     private MenuScreen menuScreen;
     private GameScreen gameScreen;
+    private WinScreen winScreen;
+    private GameOverScreen gameOverScreen;
 
     // Sprite Batch for rendering
     private SpriteBatch spriteBatch;
@@ -28,6 +35,8 @@ public class MazeRunnerGame extends Game {
 
     // Character animation downwards
     private Animation<TextureRegion> characterDownAnimation;
+    NativeFileChooser fileChooser;
+    MazeRunnerGame runnerGame;
 
     /**
      * Constructor for MazeRunnerGame.
@@ -36,7 +45,10 @@ public class MazeRunnerGame extends Game {
      */
     public MazeRunnerGame(NativeFileChooser fileChooser) {
         super();
+        this.fileChooser = fileChooser;
+        runnerGame = this;
     }
+
 
     /**
      * Called when the game is created. Initializes the SpriteBatch and Skin.
@@ -47,11 +59,12 @@ public class MazeRunnerGame extends Game {
         skin = new Skin(Gdx.files.internal("craft/craftacular-ui.json")); // Load UI skin
         this.loadCharacterAnimation(); // Load character animation
 
+
         // Play some background music
         // Background sound
-        Music backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("background.mp3"));
-        backgroundMusic.setLooping(true);
-        backgroundMusic.play();
+//        Music backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("background.mp3"));
+//        backgroundMusic.setLooping(true);
+//        backgroundMusic.play();
 
         goToMenu(); // Navigate to the menu screen
     }
@@ -71,11 +84,55 @@ public class MazeRunnerGame extends Game {
      * Switches to the game screen.
      */
     public void goToGame() {
-        this.setScreen(new GameScreen(this)); // Set the current screen to GameScreen
-        if (menuScreen != null) {
-            menuScreen.dispose(); // Dispose the menu screen if it exists
-            menuScreen = null;
+        if (gameScreen == null) {
+            gameScreen = new GameScreen(this,"maps/level-3.properties");
         }
+        this.setScreen(gameScreen);
+    }
+    public void loadGame() {
+        NativeFileChooserConfiguration conf = new NativeFileChooserConfiguration();
+
+        conf.directory = Gdx.files.local("/maps");
+
+//        conf.mimeFilter = "*";
+        conf.nameFilter = new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.endsWith(".properties");
+            }
+        };
+
+        conf.title = "Choose map";
+        fileChooser.chooseFile(conf, new NativeFileChooserCallback() {
+            @Override
+            public void onFileChosen(FileHandle file) {
+                System.out.println(file.path());
+                //
+                gameScreen = new GameScreen(runnerGame,file.path());
+                setScreen(gameScreen);
+            }
+
+            @Override
+            public void onCancellation() {
+            }
+
+            @Override
+            public void onError(Exception exception) {
+            }
+        });
+    }
+
+    public void goToVictoryScreen(int score,float time){
+        if (winScreen == null) {
+            winScreen = new WinScreen(this,score,time);
+        }
+        this.setScreen(winScreen);
+    }
+    public void goToGameOverScreen(int score,float time){
+        if (gameOverScreen == null) {
+            gameOverScreen = new GameOverScreen(this,score,time);
+        }
+        this.setScreen(gameOverScreen);
     }
 
     /**
@@ -108,8 +165,8 @@ public class MazeRunnerGame extends Game {
         getScreen().dispose(); // Dispose the current screen
         spriteBatch.dispose(); // Dispose the spriteBatch
         skin.dispose(); // Dispose the skin
-    }
 
+    }
     // Getter methods
     public Skin getSkin() {
         return skin;
@@ -122,4 +179,9 @@ public class MazeRunnerGame extends Game {
     public SpriteBatch getSpriteBatch() {
         return spriteBatch;
     }
+
+    //Lina Implementation
+
+
+
 }

@@ -3,7 +3,7 @@ package de.tum.cit.ase.maze.GameComponents;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 
-public class Bullet extends GameEntities {
+public class  Bullet extends GameEntities {
     Vector2 dir;
     float speed = 5;
     public Bullet(Vector2 pos, Vector2 dir) {
