@@ -95,7 +95,7 @@ public class Player extends GameEntities{
         return shoot_time;
     }
 
-    public void setShoot_time(float shoot_time) {
+    public void  setShoot_time(float shoot_time) {
         this.shoot_time = shoot_time;
     }
 
