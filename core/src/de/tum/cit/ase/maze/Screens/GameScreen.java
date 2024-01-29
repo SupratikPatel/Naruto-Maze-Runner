@@ -250,6 +250,7 @@ public class GameScreen implements Screen {
                     if(block.getBlocksType() == BlockType.EXIT && block.rectangle().collide(player.box())){
                         if(keyCount == map.getKeyCount()){
                             score += 100;
+                            Manager.getInstance().soundManager.stopMusic();
                             Manager.getInstance().soundManager.play("win",1.0f);//win
                             game.goToVictoryScreen(score,time);
                             return;
@@ -326,7 +327,7 @@ public class GameScreen implements Screen {
                 obj.destroyFlAG = true;
                 keyCount++;
                 score += 50;
-                Manager.getInstance().soundManager.play("item",1.0f);
+                Manager.getInstance().soundManager.play("collectkey",9.5f);
             }
             else if(obj instanceof Traps && obj.box().collide(player.box())){
                 Manager.getInstance().soundManager.play("death",1.0f);

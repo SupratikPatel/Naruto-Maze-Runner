@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added JavaDoc comments to Screens and utils - SuperSU" />
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added JavaDoc comments to Screens and utils - SuperSU">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/gameMusic.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/gameMusic.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SoundManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -120,7 +126,8 @@
       <workItem from="1706545037802" duration="1204000" />
       <workItem from="1706546255215" duration="88000" />
       <workItem from="1706546372888" duration="521000" />
-      <workItem from="1706552245228" duration="2276000" />
+      <workItem from="1706552245228" duration="2315000" />
+      <workItem from="1706556844562" duration="2225000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -210,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706556782256</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added JavaDoc comments to Screens and utils - SuperSU">
+      <option name="closed" value="true" />
+      <created>1706556810848</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1706556810848</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
