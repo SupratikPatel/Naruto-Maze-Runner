@@ -48,8 +48,6 @@ public class MazeRunnerGame extends Game {
         this.fileChooser = fileChooser;
         runnerGame = this;
     }
-
-
     /**
      * Called when the game is created. Initializes the SpriteBatch and Skin.
      */
@@ -58,14 +56,6 @@ public class MazeRunnerGame extends Game {
         spriteBatch = new SpriteBatch(); // Create SpriteBatch
         skin = new Skin(Gdx.files.internal("craft/craftacular-ui.json")); // Load UI skin
         this.loadCharacterAnimation(); // Load character animation
-
-
-        // Play some background music
-        // Background sound
-//        Music backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("background.mp3"));
-//        backgroundMusic.setLooping(true);
-//        backgroundMusic.play();
-
         goToMenu(); // Navigate to the menu screen
     }
 
@@ -85,49 +75,50 @@ public class MazeRunnerGame extends Game {
      */
     public void goToGame() {
         if (gameScreen == null) {
-            gameScreen = new GameScreen(this,"maps/level-3.properties");
+            gameScreen = new GameScreen(this,"maps/level-2.properties");
         }
         this.setScreen(gameScreen);
     }
+    /**
+     * Loads a game from a selected map file.
+     */
     public void loadGame() {
+        // Configuration for the file chooser
         NativeFileChooserConfiguration conf = new NativeFileChooserConfiguration();
-
         conf.directory = Gdx.files.local("/maps");
-
-//        conf.mimeFilter = "*";
-        conf.nameFilter = new FilenameFilter() {
-            @Override
-            public boolean accept(File dir, String name) {
-                return name.endsWith(".properties");
-            }
-        };
+        conf.nameFilter = (dir, name) -> name.endsWith(".properties");
 
         conf.title = "Choose map";
+        // Callback for the file chooser
         fileChooser.chooseFile(conf, new NativeFileChooserCallback() {
             @Override
             public void onFileChosen(FileHandle file) {
                 System.out.println(file.path());
-                //
                 gameScreen = new GameScreen(runnerGame,file.path());
                 setScreen(gameScreen);
             }
-
             @Override
             public void onCancellation() {
             }
-
             @Override
             public void onError(Exception exception) {
             }
         });
     }
 
+    /**
+     * Switches to the victory screen.
+     */
     public void goToVictoryScreen(int score,float time){
         if (winScreen == null) {
             winScreen = new WinScreen(this,score,time);
         }
         this.setScreen(winScreen);
     }
+
+    /**
+     * Switches to the game-over screen.
+     */
     public void goToGameOverScreen(int score,float time){
         if (gameOverScreen == null) {
             gameOverScreen = new GameOverScreen(this,score,time);
@@ -172,16 +163,12 @@ public class MazeRunnerGame extends Game {
         return skin;
     }
 
-     public Animation<TextureRegion> getCharacterDownAnimation() {
+    public Animation<TextureRegion> getCharacterDownAnimation() {
         return characterDownAnimation;
     }
 
     public SpriteBatch getSpriteBatch() {
         return spriteBatch;
     }
-
-    //Lina Implementation
-
-
 
 }

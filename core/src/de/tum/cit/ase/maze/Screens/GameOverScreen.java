@@ -15,12 +15,25 @@ import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
+/**
+ * The screen displayed when the game is over.
+ * This class handles the display of the game over message, the player's score, and the time taken.
+ * It also provides a button to return to the main menu.
+ */
 public class GameOverScreen implements Screen {
 
     private final Stage stage;
     private final MazeRunnerGame game;
 
-    public  GameOverScreen(MazeRunnerGame game,int score,float time) {
+    /**
+     * Constructor for the GameOverScreen class.
+     * Sets up the camera, viewport, stage, and UI elements for the game over screen.
+     *
+     * @param game  The instance of the MazeRunnerGame.
+     * @param score The final score achieved by the player.
+     * @param time  The time taken by the player.
+     */
+    public GameOverScreen(MazeRunnerGame game, int score, float time) {
         this.game = game;
         var camera = new OrthographicCamera();
         camera.zoom = 1.5f; // Set camera zoom for a closer view
@@ -30,6 +43,13 @@ public class GameOverScreen implements Screen {
         setupUI(score, time);
     }
 
+    /**
+     * Sets up the UI elements for the game over screen.
+     * Adds labels for game over message, score, and time, and a button to go back to the menu.
+     *
+     * @param score The final score achieved by the player.
+     * @param time  The time taken by the player.
+     */
     private void setupUI(int score, float time) {
         Table table = new Table();
         table.setFillParent(true);
@@ -55,6 +75,12 @@ public class GameOverScreen implements Screen {
         });
     }
 
+    /**
+     * Renders the game over screen.
+     * Clears the screen and draws the stage with the UI elements.
+     *
+     * @param delta The time in seconds since the last render.
+     */
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // Clear the screen
@@ -62,6 +88,13 @@ public class GameOverScreen implements Screen {
         stage.draw(); // Draw the stage
     }
 
+    /**
+     * Resizes the viewport of the stage.
+     * This method is called when the screen size is changed.
+     *
+     * @param width  The new width of the screen.
+     * @param height The new height of the screen.
+     */
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true); // Update the stage viewport on resize

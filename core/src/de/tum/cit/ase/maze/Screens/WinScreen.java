@@ -1,11 +1,10 @@
 package de.tum.cit.ase.maze.Screens;
 
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -16,17 +15,19 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 
 /**
- * The MenuScreen class is responsible for displaying the main menu of the game.
- * It extends the LibGDX Screen class and sets up the UI components for the menu.
+ * This class represents the victory screen for the MazeRunner game.
+ * It displays the player's score and time upon winning the game.
  */
 public class WinScreen implements Screen {
 
     private final Stage stage;
 
     /**
-     * Constructor for MenuScreen. Sets up the camera, viewport, stage, and UI elements.
+     * Constructor for WinScreen. Sets up the camera, viewport, stage, and UI elements.
      *
      * @param game The main game class, used to access global resources and methods.
+     * @param score The score achieved by the player.
+     * @param time The time taken by the player to win.
      */
     public WinScreen(MazeRunnerGame game, int score, float time) {
         var camera = new OrthographicCamera();
@@ -40,25 +41,30 @@ public class WinScreen implements Screen {
         stage.addActor(table); // Add the table to the stage
 
         // Add a label as a title
-        Label gameOverLabel = new Label("You win!", game.getSkin(), "title");
+        Label winLabel = new Label("You win!", game.getSkin(), "title");
         Label scoreLabel = new Label("Score: " + score, game.getSkin(), "title");
-        Label timeLabel = new Label("Time: " + String.format("%.2fs",time), game.getSkin(), "title");
-        gameOverLabel.setColor(Color.GREEN);
-        table.add(gameOverLabel).padBottom(80).row();
+        Label timeLabel = new Label("Time: " + String.format("%.2fs", time), game.getSkin(), "title");
+        winLabel.setColor(Color.GREEN);
+        table.add(winLabel).padBottom(80).row();
         table.add(scoreLabel).padBottom(80).row();
         table.add(timeLabel).padBottom(80).row();
 
-        // Create and add a button to go to the game screen
-        TextButton goToGameButton = new TextButton("Menu", game.getSkin());
-        table.add(goToGameButton).width(300).row();
-        goToGameButton.addListener(new ChangeListener() {
+        // Create and add a button to go to the menu screen
+        TextButton goToMenuButton = new TextButton("Menu", game.getSkin());
+        table.add(goToMenuButton).width(300).row();
+        goToMenuButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                game.goToMenu(); // Change to the game screen when button is pressed
+                game.goToMenu(); // Change to the menu screen when button is pressed
             }
         });
     }
 
+    /**
+     * Renders the victory screen.
+     *
+     * @param delta The time in seconds since the last render.
+     */
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // Clear the screen
@@ -66,17 +72,29 @@ public class WinScreen implements Screen {
         stage.draw(); // Draw the stage
     }
 
+    /**
+     * Resizes the victory screen's viewport.
+     *
+     * @param width The new width of the screen.
+     * @param height The new height of the screen.
+     */
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true); // Update the stage viewport on resize
     }
 
+    /**
+     * Disposes of the victory screen when it is no longer needed.
+     */
     @Override
     public void dispose() {
         // Dispose of the stage when screen is disposed
         stage.dispose();
     }
 
+    /**
+     * Shows the victory screen and sets the input processor.
+     */
     @Override
     public void show() {
         // Set the input processor so the stage can receive input events
@@ -93,6 +111,6 @@ public class WinScreen implements Screen {
     }
 
     @Override
-     public void hide() {
+    public void hide() {
     }
 }

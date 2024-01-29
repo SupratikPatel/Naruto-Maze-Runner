@@ -21,15 +21,23 @@ import de.tum.cit.ase.maze.Utilities.Manager;
  * It extends the LibGDX Screen class and sets up the UI components for the menu.
  */
 public class MenuScreen implements Screen {
-     private Stage stage;
+    private Stage stage;
     private final MazeRunnerGame game;
 
+    /**
+     * Constructor for MenuScreen.
+     *
+     * @param game The game instance associated with this screen.
+     */
     public MenuScreen(MazeRunnerGame game) {
         this.game = game;
         initializeStage();
         setupUI();
     }
 
+    /**
+     * Initializes the stage for the menu screen.
+     */
     private void initializeStage() {
         OrthographicCamera camera = new OrthographicCamera();
         camera.zoom = 1.5f;
@@ -37,6 +45,9 @@ public class MenuScreen implements Screen {
         stage = new Stage(viewport, game.getSpriteBatch());
     }
 
+    /**
+     * Sets up the user interface for the menu screen.
+     */
     private void setupUI() {
         Table table = new Table();
         table.setFillParent(true);
@@ -77,6 +88,9 @@ public class MenuScreen implements Screen {
         Manager.getInstance().soundManager.playMenuMusic();
     }
 
+    /**
+     * Renders the menu screen.
+     */
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // Clear the screen
@@ -84,22 +98,32 @@ public class MenuScreen implements Screen {
         stage.draw(); // Draw the stage
     }
 
+    /**
+     * Resizes the menu screen.
+     */
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true); // Update the stage viewport on resize
     }
 
+    /**
+     * Disposes of the menu screen when it is no longer needed.
+     */
     @Override
     public void dispose() {
         // Dispose of the stage when screen is disposed
         stage.dispose();
     }
 
+    /**
+     * Shows the menu screen.
+     */
     @Override
     public void show() {
         // Set the input processor so the stage can receive input events
         Gdx.input.setInputProcessor(stage);
     }
+
 
     // The following methods are part of the Screen interface but are not used in this screen.
     @Override

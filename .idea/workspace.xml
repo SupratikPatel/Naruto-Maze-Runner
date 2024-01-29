@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Fixed Ghost1 rendering issues- SuperSU">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Game.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Ghost1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Ghost1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Ghost2.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Ghost2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/Node.java" afterDir="false" />
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added JavaDoc comments to GameComponents and A* Algo - SuperSU">
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameOverScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameOverScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MazeRunnerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MazeRunnerGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/WinScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/WinScreen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +126,7 @@
       <workItem from="1706545037802" duration="1204000" />
       <workItem from="1706546255215" duration="88000" />
       <workItem from="1706546372888" duration="521000" />
+      <workItem from="1706552245228" duration="1200000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -204,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706544392788</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added JavaDoc comments to GameComponents and A* Algo - SuperSU">
+      <option name="closed" value="true" />
+      <created>1706552633441</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1706552633441</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +233,7 @@
     <MESSAGE value="Added Player movement- SuperSU" />
     <MESSAGE value="Fixed Exit button- SuperSU" />
     <MESSAGE value="Fixed Ghost1 rendering issues- SuperSU" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Ghost1 rendering issues- SuperSU" />
+    <MESSAGE value="Added JavaDoc comments to GameComponents and A* Algo - SuperSU" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added JavaDoc comments to GameComponents and A* Algo - SuperSU" />
   </component>
 </project>

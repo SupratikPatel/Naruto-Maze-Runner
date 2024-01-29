@@ -27,16 +27,15 @@ import java.util.List;
 
 /**
  * The GameScreen class is responsible for rendering the gameplay screen.
- * It handles the game logic and rendering of the game elements.
+ * It handles the game logic, UI and rendering of the game elements.
  */
 public class GameScreen implements Screen {
 
     private final MazeRunnerGame game;
     private final OrthographicCamera camera;
-    private final BitmapFont font;
     private final Stage stage;
 
-    private Viewport viewport;
+    private final Viewport viewport;
 
     List<GameEntities> objects;
     Batch batch;
@@ -53,12 +52,17 @@ public class GameScreen implements Screen {
     Label heartLabel;
     Label timeLabel;
     Label keyLabel;
-    Label bananaLabel;
     Label missingKeyLabel;
 
     Table pauseMenu;
     boolean gamePause = false;
 
+    /**
+     * Constructor for the GameScreen class.
+     * Initializes the game screen with the given game and map path.
+     * @param game The MazeRunnerGame instance.
+     * @param mapPath The path to the map file.
+     */
     public GameScreen(MazeRunnerGame game,String mapPath) {
         this.game = game;
         objects = new ArrayList<>();
@@ -66,16 +70,11 @@ public class GameScreen implements Screen {
 
         // Create and configure the camera for the game view
         camera = new OrthographicCamera(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-//        camera.setToOrtho(false);
         viewport = new ScreenViewport(camera);
         stage = new Stage(); // Create a stage for UI elements
 
-//        viewport = new FillViewport(Gdx.graphics.getWidth(),Gdx.graphics.getHeight(),camera);
-//        ExtendViewportPermalink
-
         // Get the font from the game's skin
-        font = game.getSkin().getFont("font");
-
+        BitmapFont font = game.getSkin().getFont("font");
         batch = game.getSpriteBatch();
         map = new Maps(mapPath,objects);
         player = new Player(new Vector2(map.getEntryBlock().getColumn() * 16,map.getEntryBlock().getRow() * 16));
@@ -89,9 +88,10 @@ public class GameScreen implements Screen {
         heart = 3;
         keyCount = 0;
         createUI();
-
     }
-
+    /**
+     * Creates the user interface for the game.
+     */
     void createUI(){
         Table table = new Table(); // Create a table for layout
         table.setFillParent(true); // Make the table fill the stage
@@ -156,12 +156,9 @@ public class GameScreen implements Screen {
         missingKeyLabel.setPosition((float) Gdx.graphics.getWidth() /2 - missingKeyLabel.getWidth()/2, (float) Gdx.graphics.getHeight() /2 - missingKeyLabel.getHeight()/2);
         stage.addActor(missingKeyLabel);
 
-
         pauseMenu = new Table();
         pauseMenu.setFillParent(true);
-
         pauseMenu.add(new Label("ESC: Continue!",game.getSkin())).padBottom(20).row();
-
 
         TextButton loadBtn = new TextButton("Load", game.getSkin());
         pauseMenu.add(loadBtn).width(200);
@@ -169,8 +166,7 @@ public class GameScreen implements Screen {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
                 game.loadGame(); // Change to the game screen when button is pressed
-            }
-        });
+            }});
         TextButton gotoMenuBtn = new TextButton("Menu", game.getSkin());
         pauseMenu.add(gotoMenuBtn).width(200).padLeft(50).row();
         gotoMenuBtn.addListener(new ChangeListener() {
@@ -179,13 +175,14 @@ public class GameScreen implements Screen {
                 game.goToMenu(); // Change to the game screen when button is pressed
             }
         });
-
         pauseMenu.setVisible(false);
-
         stage.addActor(pauseMenu);
         Manager.getInstance().soundManager.playGameMusic();
     }
 
+    /**
+     * Handles key input for the game.
+     */
     void keyInput(){
         InputMultiplexer mixInput = new InputMultiplexer();
         mixInput.addProcessor(stage);
@@ -206,22 +203,18 @@ public class GameScreen implements Screen {
     }
 
     // Screen interface methods with necessary functionality
+    /**
+     * Renders the game screen, updating all entities and handling user input.
+     * @param delta The time in seconds since the last render.
+     */
     @Override
     public void render(float delta) {
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
-//            game.goToVictoryScreen();
             gamePause = !gamePause;
             pauseMenu.setVisible(gamePause);
         }
         ScreenUtils.clear(0, 0, 0, 1);
 
-
-
-
-
-
-
-//        camera.position.x += (viewport.getScreenX() + viewport.getScreenWidth()/4 + delta - camera.position.x) * 1 * delta;
         camera.update();
         batch.setProjectionMatrix(viewport.getCamera().combined);
 
@@ -229,7 +222,7 @@ public class GameScreen implements Screen {
             // collision player with other objects
             collision2();
 
-            // collision between objects
+            // collision between bullet and objects
             collision();
             followCamera.follow(player.getPosition());
 
@@ -255,7 +248,6 @@ public class GameScreen implements Screen {
                 for (int col = 0; col < map.getNum_Of_Column(); col++) {
                     Block block = map.getCell(row,col);
                     if(block.getBlocksType() == BlockType.EXIT && block.rectangle().collide(player.box())){
-
                         if(keyCount == map.getKeyCount()){
                             score += 100;
                             Manager.getInstance().soundManager.play("win",1.0f);//win
@@ -269,20 +261,18 @@ public class GameScreen implements Screen {
                     }
                 }
             }
-
-
-
             for(int i = 0; i < objects.size();i++){
                 if(objects.get(i).destroyFlAG){
                     objects.remove(i);
                 }
             }
         }
-
-        //draw
         draw();
 
     }
+    /**
+     * Draws the game entities and UI elements to the screen.
+     */
     public void draw(){
         map.draw(batch,player);
 
@@ -297,20 +287,12 @@ public class GameScreen implements Screen {
 
         stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f)); // Update the stage
         stage.draw(); // Draw the stage
-
-
-        // debug
-//        Utils.getInstance().drawRect(player.getRect(),camera);
-//        for(int row = 0; row < map.getRows();row++) {
-//            for (int col = 0; col < map.getCols(); col++) {
-//                Block cell = map.getCell(row,col);
-//                Utils.getInstance().drawRect(cell.getRect(),camera);
-//            }
-//        }
-
         viewport.apply(false);
     }
 
+    /**
+     * Handles collision detection between bullets and other game entities.
+     */
     public void collision(){
         for(GameEntities obj : objects){
             for(GameEntities otherObj: objects){
@@ -328,6 +310,9 @@ public class GameScreen implements Screen {
             }
         }
     }
+    /**
+     * Handles collision detection between the player and other game entities.
+     */
     public void collision2(){
         for(GameEntities obj : objects){
             if(obj instanceof Ghost2){
@@ -349,6 +334,9 @@ public class GameScreen implements Screen {
             }
         }
     }
+    /**
+     * Handles the logic for when the player dies.
+     */
     void playerDie(){
         heart--;
         Block entryBlock = map.getEntryBlock();
@@ -360,19 +348,24 @@ public class GameScreen implements Screen {
         }
     }
 
+    /**
+     * Spawns bullets in the game world.
+     */
     void spawnBullet(){
         Block emptyBlock = map.getRandomEmptyCell();
         while (Vector2.dst(player.getPosition().x,player.getPosition().y, emptyBlock.getColumn()*16, emptyBlock.getRow() * 16) > 200){
             emptyBlock = map.getRandomEmptyCell();
         }
     }
-
-
+    /**
+     * Resizes the game viewport.
+     * @param width The new width of the screen.
+     * @param height The new height of the screen.
+     */
     @Override
     public void resize(int width, int height) {
         camera.setToOrtho(false);
         viewport.update(width,height,false);
-//        stage.getViewport().update(width, height, false); // Update the stage viewport on resize
     }
 
     @Override
