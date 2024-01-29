@@ -93,6 +93,6 @@ public class WinScreen implements Screen {
     }
 
     @Override
-    public void hide() {
+     public void hide() {
     }
 }

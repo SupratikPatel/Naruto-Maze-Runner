@@ -19,7 +19,7 @@ import de.tum.cit.ase.maze.Utilities.Manager;
  * It extends the LibGDX Screen class and sets up the UI components for the menu.
  */
 public class MenuScreen implements Screen {
-    private Stage stage;
+     private Stage stage;
     private final MazeRunnerGame game;
 
     public MenuScreen(MazeRunnerGame game) {

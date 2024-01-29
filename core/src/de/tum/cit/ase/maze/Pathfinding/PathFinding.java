@@ -11,18 +11,18 @@ import java.util.List;
 public class PathFinding {
     List<Node> open_list;
     List<Node> close_list;
-    Map map;
+    Maps map;
 
     Node startNode;
     Node endNode;
 
     int distanceType = 0;
 
-    public PathFinding(Map map) {
+    public PathFinding(Maps map) {
         this.map = map;
     }
 
-    public Map getMap(){
+    public Maps getMap(){
         return map;
     }
 
@@ -36,7 +36,7 @@ public class PathFinding {
     }
     Node isInCloseList(int row, int col) {
         for (Node n : close_list) {
-            if (n.getRow() == row && n.getCol() == col) {
+            if (n.getRow() == row && n.getColumn() == col) {
                 return n;
             }
         }
@@ -67,7 +67,7 @@ public class PathFinding {
 
     static float grid_distance(Node a, Node b)
     {
-        int dst_x = Math.abs(a.getCol() - b.getCol());
+        int dst_x = Math.abs(a.getColumn() - b.getColumn());
         int dst_y = Math.abs(a.getRow() - b.getRow());
 
         if (dst_x > dst_y)
@@ -86,12 +86,12 @@ public class PathFinding {
 
         for (int i = 0; i < 4; i++) {
             int new_row = dir_row[i] + node.getRow();
-            int new_col = dir_col[i] + node.getCol();
+            int new_col = dir_col[i] + node.getColumn();
 
-            if (new_row > map.getRows() - 1 || new_row < 0 || new_col > map.getCols() - 1 || new_col < 0) {
+            if (new_row > map.getNum_Of_Rows() - 1 || new_row < 0 || new_col > map.getNum_Of_Column() - 1 || new_col < 0) {
                 continue;
             }
-            if (map.getCell(new_row,new_col).cellType == CellType.WALL) {
+            if (map.getCell(new_row,new_col).getBlocksType() == BlockType.WALL) {
                 continue;
             }
             if (isInCloseList(new_row, new_col) != null) {
@@ -131,7 +131,7 @@ public class PathFinding {
         }
         for (int i = tracepath.size() - 1; i >= 0; i--) {
             Node n = tracepath.get(i);
-            path.add(new Vector2(n.getCol(), n.getRow()));
+            path.add(new Vector2(n.getColumn(), n.getRow()));
         }
 
         if(path.size() > 0){

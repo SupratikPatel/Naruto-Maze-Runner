@@ -20,7 +20,7 @@ public class GameOverScreen implements Screen {
     private final Stage stage;
     private final MazeRunnerGame game;
 
-    public GameOverScreen(MazeRunnerGame game,int score,float time) {
+    public  GameOverScreen(MazeRunnerGame game,int score,float time) {
         this.game = game;
         var camera = new OrthographicCamera();
         camera.zoom = 1.5f; // Set camera zoom for a closer view

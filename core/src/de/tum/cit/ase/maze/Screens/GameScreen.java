@@ -94,7 +94,7 @@ public class GameScreen implements Screen {
 
     }
 
-    void createUI(){
+    public void createUI(){
         Table table = new Table(); // Create a table for layout
         table.setFillParent(true); // Make the table fill the stage
         stage.addActor(table); // Add the table to the stage
@@ -188,7 +188,7 @@ public class GameScreen implements Screen {
         Manager.getInstance().soundManager.playGameMusic();
     }
 
-    void initInput(){
+    public void initInput(){
         InputMultiplexer mixInput = new InputMultiplexer();
         mixInput.addProcessor(stage);
         mixInput.addProcessor(new InputAdapter(){
@@ -245,7 +245,7 @@ public class GameScreen implements Screen {
             for(int row = 0; row < map.getNum_Of_Rows(); row++) {
                 for (int col = 0; col < map.getNum_Of_Column(); col++) {
                     Block block = map.getCell(row,col);
-                    if(block.getBlocksType() == BlockType.EXIT && block.getRect().collide(player.getRect())){
+                    if(block.getBlocksType() == BlockType.EXIT && block.rectangle().collide(player.getRect())){
                         if(keyCount == map.getKeyCount()){
                             score += 100;
                             game.goToVictoryScreen(score,time);
@@ -267,27 +267,27 @@ public class GameScreen implements Screen {
                     playerDie();
                 }
                 else if(obj instanceof Key && obj.getRect().collide(player.getRect())){
-                    obj.destroyFlag = true;
+                    obj.destroyFlAG = true;
                     keyCount++;
                     score += 50;
-                    Manager.getInstance().soundsManager.play("item",1.0f);
+                    Manager.getInstance().soundManager.play("item",1.0f);
                 }
-                else if(obj instanceof Trap && obj.getRect().collide(player.getRect())){
+                else if(obj instanceof Traps && obj.getRect().collide(player.getRect())){
                     playerDie();
                 }
             }
 
             // collision between objects
-            for(Entity obj : objects){
-                for(Entity otherObj: objects){
+            for(GameEntities obj : objects){
+                for(GameEntities otherObj: objects){
                     if(obj == otherObj){
                         continue;
                     }
-                    if(obj instanceof PlayerProjectile && (otherObj instanceof Enemy || otherObj instanceof Trap)){
+                    if(obj instanceof Bullet && (otherObj instanceof Enemy || otherObj instanceof Traps)){
                         if(obj.getRect().collide(otherObj.getRect())){
                             score += 5;
-                            obj.destroyFlag = true;
-                            otherObj.destroyFlag = true;
+                            obj.destroyFlAG = true;
+                            otherObj.destroyFlAG = true;
                         }
                     }
 
@@ -295,7 +295,7 @@ public class GameScreen implements Screen {
             }
 
             for(int i = 0; i < objects.size();i++){
-                if(objects.get(i).destroyFlag){
+                if(objects.get(i).destroyFlAG){
                     objects.remove(i);
                 }
             }
@@ -304,7 +304,7 @@ public class GameScreen implements Screen {
         //draw
         map.draw(batch,player);
 
-        for(Entity obj : objects){
+        for(GameEntities obj : objects){
             if(Vector2.dst(player.getPosition().x,player.getPosition().y,obj.getPosition().x,obj.getPosition().y) > 2000){ // fog of war
                 continue;
             }
@@ -321,19 +321,19 @@ public class GameScreen implements Screen {
         viewport.apply(false);
     }
 
-    void playerDie(){
+    public void  playerDie(){
         heart--;
-        Block entryBlock = map.getEntryCell();
-        player.setPosition(new Vector2(entryBlock.col * 16, entryBlock.row * 16));
-        Manager.getInstance().soundsManager.play("death",1.0f);
+        Block entryBlock = map.getEntryBlock();
+        player.setPosition(new Vector2(entryBlock.getColumn() * 16, entryBlock.getRow() * 16));
+        Manager.getInstance().soundManager.play("death",1.0f);
         if(heart <= 0){
             game.goToGameOverScreen(score,time);
         }
     }
 
-    void spawnBanana(){
+    public void spawnBanana(){
         Block emptyBlock = map.getRandomEmptyCell();
-        while (Vector2.dst(player.getPosition().x,player.getPosition().y, emptyBlock.col*16, emptyBlock.row * 16) > 200){
+        while (Vector2.dst(player.getPosition().x,player.getPosition().y, emptyBlock.getColumn()*16, emptyBlock.getRow() * 16) > 200){
             emptyBlock = map.getRandomEmptyCell();
         }
     }
