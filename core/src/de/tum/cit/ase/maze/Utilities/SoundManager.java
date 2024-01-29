@@ -27,6 +27,7 @@ public class SoundManager {
         sounds.put("item", Gdx.audio.newSound(Gdx.files.internal("sounds/item.wav")));
         sounds.put("shoot", Gdx.audio.newSound(Gdx.files.internal("sounds/shoot.mp3")));
         sounds.put("win", Gdx.audio.newSound(Gdx.files.internal("sounds/win.mp3")));
+        sounds.put("collectkey", Gdx.audio.newSound(Gdx.files.internal("sounds/collectkey.mp3")));
     }
 
     /**
@@ -55,5 +56,9 @@ public class SoundManager {
         sounds.get("menuMusic").stop();
         sounds.get("gameMusic").stop();
         sounds.get("gameMusic").loop(0.2f);
+    }
+    public void stopMusic(){
+        sounds.get("menuMusic").stop();
+        sounds.get("gameMusic").stop();
     }
 }

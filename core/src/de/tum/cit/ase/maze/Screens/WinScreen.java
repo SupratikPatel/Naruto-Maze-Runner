@@ -41,7 +41,7 @@ public class WinScreen implements Screen {
         stage.addActor(table); // Add the table to the stage
 
         // Add a label as a title
-        Label winLabel = new Label("You win!", game.getSkin(), "title");
+        Label winLabel = new Label("Winner Winner Chicken Dinner!", game.getSkin(), "title");
         Label scoreLabel = new Label("Score: " + score, game.getSkin(), "title");
         Label timeLabel = new Label("Time: " + String.format("%.2fs", time), game.getSkin(), "title");
         winLabel.setColor(Color.GREEN);

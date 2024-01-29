@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added Assests">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added JavaDoc comments to Screens and utils - SuperSU">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/sounds/gameMusic.mp3" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sounds/gameMusic.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SoundManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +32,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="5th try" type="f1a62948:ProjectNode" />
+                <item name="5th Try" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -51,9 +53,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -63,38 +62,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Run Game.executor": "Run",
-    "Gradle.5th Try:desktop [:desktop:DesktopLauncher.main()].executor": "Run",
-    "Gradle.5th try:desktop [:desktop:DesktopLauncher.main()].executor": "Run",
-    "Gradle.Build 5th Try.executor": "Run",
-    "Gradle.Build 5th try.executor": "Run",
-    "Gradle.Build fophn2324infun2324projectworkx-teamutilrandom.executor": "Run",
-    "Gradle.fophn2324infun2324projectworkx-teamutilrandom:desktop [:desktop:DesktopLauncher.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Hp/OneDrive - Higher Education Commission/Desktop/5th try",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Run Game.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.5th Try:desktop [:desktop:DesktopLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.5th try:desktop [:desktop:DesktopLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build 5th Try.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build 5th try.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build fophn2324infun2324projectworkx-teamutilrandom.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.fophn2324infun2324projectworkx-teamutilrandom:desktop [:desktop:DesktopLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/supra/Desktop/Maze fkin Runner&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -128,9 +126,8 @@
       <workItem from="1706545037802" duration="1204000" />
       <workItem from="1706546255215" duration="88000" />
       <workItem from="1706546372888" duration="521000" />
-      <workItem from="1706552245228" duration="2276000" />
-      <workItem from="1706559733181" duration="609000" />
-      <workItem from="1706560384050" duration="1549000" />
+      <workItem from="1706552245228" duration="2315000" />
+      <workItem from="1706556844562" duration="2225000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -220,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706556782256</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added JavaDoc comments to Screens and utils - SuperSU">
+      <option name="closed" value="true" />
+      <created>1706556810848</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1706556810848</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
