@@ -93,7 +93,7 @@ public class Player extends GameEntities{
         this.shoot_time = shoot_time;
     }
 
-    public Player(Vector2 position, Texture texture) {
+    public Player(Vector2 position){
         super(position, null);
         walk_down=new SpriteSheet(new Texture("player_walk.png"),4,4);
         walk_right=new SpriteSheet(new Texture("player_walk.png"),4,4);

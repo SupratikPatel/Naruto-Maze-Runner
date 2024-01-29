@@ -13,7 +13,7 @@ import games.spooky.gdx.nativefilechooser.NativeFileChooser;
 
 /**
  * The MazeRunnerGame class represents the core of the Maze Runner game.
- * It manages the screens and global resources like SpriteBatch and Skin .
+ * It manages the screens and global resources like SpriteBatch and Skin.
  */
 public class MazeRunnerGame extends Game {
     // Screens
