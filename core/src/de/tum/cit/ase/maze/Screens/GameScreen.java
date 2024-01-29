@@ -185,7 +185,7 @@ public class GameScreen implements Screen {
         pauseMenu.setVisible(false);
 
         stage.addActor(pauseMenu);
-        Manager.getInstance().soundsManager.playGameMusic();
+        Manager.getInstance().soundManager.playGameMusic();
     }
 
     void initInput(){
@@ -194,13 +194,13 @@ public class GameScreen implements Screen {
         mixInput.addProcessor(new InputAdapter(){
             @Override
             public boolean keyDown(int keycode) {
-                player.onKeyDown(keycode);
+                player.Key_Pressed(keycode);
                 return super.keyDown(keycode);
             }
 
             @Override
             public boolean keyUp(int keycode) {
-                player.onKeyUp(keycode);
+                player.Key_Release(keycode);
                 return super.keyUp(keycode);
             }
         });
@@ -231,12 +231,12 @@ public class GameScreen implements Screen {
             heartLabel.setText(heart);
             keyLabel.setText(keyCount + "/" + map.getKeyCount());
 
-            List<Entity> addedObjects = new ArrayList<>();
+            List<GameEntities> addedObjects = new ArrayList<>();
             player.update(map);
             player.shoot(addedObjects);
 
 
-            for(Entity obj : objects){
+            for(GameEntities obj : objects){
                 obj.update();
             }
             objects.addAll(addedObjects);
@@ -245,7 +245,7 @@ public class GameScreen implements Screen {
             for(int row = 0; row < map.getNum_Of_Rows(); row++) {
                 for (int col = 0; col < map.getNum_Of_Column(); col++) {
                     Block block = map.getCell(row,col);
-                    if(block.blockType == BlockType.EXIT && block.getRect().collide(player.getRect())){
+                    if(block.getBlocksType() == BlockType.EXIT && block.getRect().collide(player.getRect())){
                         if(keyCount == map.getKeyCount()){
                             score += 100;
                             game.goToVictoryScreen(score,time);
@@ -259,7 +259,7 @@ public class GameScreen implements Screen {
             }
 
             // collision player with other objects
-            for(Entity obj : objects){
+            for(GameEntities obj : objects){
                 if(obj instanceof Ghost2){
                     ((Ghost2)obj).setPlayer(player);
                 }
