@@ -4,7 +4,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import de.tum.cit.ase.maze.PathFinding.A_Star;
+import de.tum.cit.ase.maze.Pathfinding.PathFinding;
 import de.tum.cit.ase.maze.Utilities.BoundingBox;
 import de.tum.cit.ase.maze.Utilities.SpriteSheet;
 
@@ -13,7 +13,7 @@ import java.util.List;
 public class Ghost1 extends Enemy{
 
     private SpriteSheet sheet;
-    private A_Star pathFinding;
+    private PathFinding pathFinding;
     private List<Vector2> path;
     private Vector2 target,vel;
     private float speed;
@@ -24,10 +24,9 @@ public class Ghost1 extends Enemy{
         super(pos, null);
         sheet = new SpriteSheet(new Texture("ghost-Sheet.png"),1,4);
         sheet.setPlay(0, 3, 0.02f, true);
-        pathFinding = new A_Star(map);
+        pathFinding = new PathFinding(map);
 
         Block randomCell = pathFinding.getMap().getRandomEmptyCell();
-        pathFinding.setEndNode(randomCell.getColumn(), randomCell.getRow());
         path = pathFinding.findPath((int)pos.x/16,(int)pos.y/16,randomCell.getColumn(),randomCell.getRow());
 
         currentTargetIndex = 0;
@@ -49,8 +48,8 @@ public class Ghost1 extends Enemy{
             currentTargetIndex += 1;
             if(currentTargetIndex >= path.size()){
                 Block randomCell = pathFinding.getMap().getRandomEmptyCell();
-                pathFinding.setEndNode(randomCell.getColumn(), randomCell.getRow());
-                path = pathFinding.findPath((int)position.x/16,(int)position.y/16);
+
+                path = pathFinding.findPath((int)position.x/16,(int)position.y/16, randomCell.getColumn(),randomCell.getRow() );
                 currentTargetIndex = 0;
                 return;
             }
