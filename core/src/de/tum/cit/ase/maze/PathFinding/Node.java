@@ -49,9 +49,6 @@ public class Node {
         this.g = g;
     }
 
-    public float getH() {
-        return h;
-    }
 
     public void setH(float h) {
         this.h = h;
@@ -61,33 +58,16 @@ public class Node {
         return parent;
     }
 
-    public void setParent(Node parent) {
-        this.parent = parent;
-    }
 
     public int getRow() {
         return Row;
     }
 
-    public void setRow(int row) {
-        this.Row = row;
-    }
 
     public int getColumn() {
         return Column;
     }
 
-    public void setColumn(int column) {
-        this.Column = column;
-    }
-
-    public float getDistance() {
-        return distance;
-    }
-
-    public void setDistance(float distance) {
-        this.distance = distance;
-    }
 
     public boolean equal(Node n){
         return n.Row == Row && n.Column == Column;

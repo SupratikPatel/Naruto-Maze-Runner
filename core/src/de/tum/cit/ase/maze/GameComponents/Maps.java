@@ -243,16 +243,8 @@ public class Maps {
         return Num_Of_Rows;
     }
 
-    public void setNum_Of_Rows(int num_Of_Rows) {
-        Num_Of_Rows = num_Of_Rows;
-    }
-
     public int getNum_Of_Column() {
         return Num_Of_Column;
-    }
-
-    public void setNum_Of_Column(int num_Of_Column) {
-        Num_Of_Column = num_Of_Column;
     }
 
     public Vector2 getPosition() {
@@ -263,60 +255,13 @@ public class Maps {
         this.position = position;
     }
 
-    public SpriteSheet getTileSheet() {
-        return tileSheet;
-    }
-
-    public void setTileSheet(SpriteSheet tileSheet) {
-        this.tileSheet = tileSheet;
-    }
-
     public Block getEntryBlock() {
         return entryBlock;
-    }
-
-    public void setEntryBlock(Block entryBlock) {
-        this.entryBlock = entryBlock;
-    }
-
-    public Block getExitBlock() {
-        return exitBlock;
-    }
-
-    public void setExitBlock(Block exitBlock) {
-        this.exitBlock = exitBlock;
-    }
-
-    public Block[][] getGrid() {
-        return grid;
-    }
-
-    public void setGrid(Block[][] grid) {
-        this.grid = grid;
-    }
-
-    public List<Block> getEmptyBlocks() {
-        return emptyBlocks;
-    }
-
-    public void setEmptyBlocks(List<Block> emptyBlocks) {
-        this.emptyBlocks = emptyBlocks;
-    }
-
-    public Random getRandom() {
-        return random;
-    }
-
-    public void setRandom(Random random) {
-        this.random = random;
     }
 
     public int getKeyCount() {
         return keyCount;
     }
 
-    public void setKeyCount(int keyCount) {
-        this.keyCount = keyCount;
-    }
 
 }

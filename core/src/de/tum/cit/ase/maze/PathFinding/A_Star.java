@@ -99,7 +99,7 @@ public class A_Star {
     }
 
     /**
-     * Explores the neighbors of a given node, updating the open list with new nodes to explore.
+     * Explores the neighbors of a given node, updating the open list with new node to explore.
      *
      * @param node The node whose neighbors will be explored.
      */

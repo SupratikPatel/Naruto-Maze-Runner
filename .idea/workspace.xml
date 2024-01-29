@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added JavaDoc comments to Screens and utils - SuperSU">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="added Key pickup sound and fixed winscreen music playback overlap with gameMusic - SuperSU">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Maps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +29,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="5th try" type="f1a62948:ProjectNode" />
+                <item name="5th Try" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -125,7 +124,8 @@
       <workItem from="1706546255215" duration="88000" />
       <workItem from="1706546372888" duration="521000" />
       <workItem from="1706552245228" duration="2315000" />
-      <workItem from="1706556844562" duration="2225000" />
+      <workItem from="1706556844562" duration="2411000" />
+      <workItem from="1706562433282" duration="688000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -223,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706556810848</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added Key pickup sound and fixed winscreen music playback overlap with gameMusic - SuperSU">
+      <option name="closed" value="true" />
+      <created>1706560938674</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1706560938674</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -250,7 +258,7 @@
     <MESSAGE value="Fixed Ghost1 rendering issues- SuperSU" />
     <MESSAGE value="Added JavaDoc comments to GameComponents and A* Algo - SuperSU" />
     <MESSAGE value="Added JavaDoc comments to Screens and utils - SuperSU" />
-    <MESSAGE value="Added Assests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Assests" />
+    <MESSAGE value="added Key pickup sound and fixed winscreen music playback overlap with gameMusic - SuperSU" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Key pickup sound and fixed winscreen music playback overlap with gameMusic - SuperSU" />
   </component>
 </project>

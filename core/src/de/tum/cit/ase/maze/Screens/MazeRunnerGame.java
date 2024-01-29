@@ -163,9 +163,6 @@ public class MazeRunnerGame extends Game {
         return skin;
     }
 
-    public Animation<TextureRegion> getCharacterDownAnimation() {
-        return characterDownAnimation;
-    }
 
     public SpriteBatch getSpriteBatch() {
         return spriteBatch;
