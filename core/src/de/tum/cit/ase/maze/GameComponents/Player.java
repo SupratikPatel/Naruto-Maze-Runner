@@ -187,7 +187,7 @@ public class Player extends GameEntities{
         for(int row = 0; row < maps.getNum_Of_Rows();row++) {
             for (int col = 0; col < maps.getNum_Of_Column(); col++) {
                 Block cell = maps.getCell(row,col);
-                if(cell.getBlocksType() == BlockType.WALL && cell.rectangle().collide(this.getRect())){
+                if(cell.getBlocksType() == BlockType.WALL && cell.rectangle().collide(this.box())){
                     position = previous_position;
                     return;
                 }
@@ -210,7 +210,7 @@ public class Player extends GameEntities{
     }
 
     @Override
-    public BoundingBox getRect(){
+    public BoundingBox box(){
         return new BoundingBox(position.x + 2,position.y + 2,sheet.getWidth() - 4, (float) sheet.getHeight() /2 - 4);
     }
 

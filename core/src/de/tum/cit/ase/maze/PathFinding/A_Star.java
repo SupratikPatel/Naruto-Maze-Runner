@@ -8,7 +8,7 @@ import de.tum.cit.ase.maze.GameComponents.Maps;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PathFinding {
+public class A_Star {
     List<Node> open_list;
     List<Node> close_list;
     Maps map;
@@ -18,7 +18,7 @@ public class PathFinding {
 
     int distanceType = 0;
 
-    public PathFinding(Maps map) {
+    public A_Star(Maps map) {
         this.map = map;
     }
 

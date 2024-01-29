@@ -254,7 +254,7 @@ public class GameScreen implements Screen {
             for(int row = 0; row < map.getNum_Of_Rows();row++) {
                 for (int col = 0; col < map.getNum_Of_Column(); col++) {
                     Block block = map.getCell(row,col);
-                    if(block.getBlocksType() == BlockType.EXIT && block.rectangle().collide(player.getRect())){
+                    if(block.getBlocksType() == BlockType.EXIT && block.rectangle().collide(player.box())){
 
                         if(keyCount == map.getKeyCount()){
                             score += 100;
@@ -317,8 +317,8 @@ public class GameScreen implements Screen {
                 if(obj == otherObj){
                     continue;
                 }
-                if(obj instanceof Bullet && (otherObj instanceof Ghost2 || otherObj instanceof Traps)){
-                    if(obj.getRect().collide(otherObj.getRect())){
+                if(obj instanceof Bullet && (otherObj instanceof Enemy || otherObj instanceof Traps)){
+                    if(obj.box().collide(otherObj.box())){
                         score += 10;
                         obj.destroyFlAG = true;
                         otherObj.destroyFlAG = true;
@@ -333,17 +333,17 @@ public class GameScreen implements Screen {
             if(obj instanceof Ghost2){
                 ((Ghost2)obj).setPlayer(player);
             }
-            if(obj instanceof Enemy && obj.getRect().collide(player.getRect())){
+            if(obj instanceof Enemy && obj.box().collide(player.box())){
                 Manager.getInstance().soundManager.play("death",1.0f);
                 playerDie();
             }
-            else if(obj instanceof Key && obj.getRect().collide(player.getRect())){
+            else if(obj instanceof Key && obj.box().collide(player.box())){
                 obj.destroyFlAG = true;
                 keyCount++;
                 score += 50;
                 Manager.getInstance().soundManager.play("item",1.0f);
             }
-            else if(obj instanceof Traps && obj.getRect().collide(player.getRect())){
+            else if(obj instanceof Traps && obj.box().collide(player.box())){
                 Manager.getInstance().soundManager.play("death",1.0f);
                 playerDie();
             }

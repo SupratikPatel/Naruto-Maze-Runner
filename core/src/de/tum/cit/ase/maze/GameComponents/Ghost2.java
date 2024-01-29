@@ -1,11 +1,9 @@
 package de.tum.cit.ase.maze.GameComponents;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Vector2;
-import de.tum.cit.ase.maze.Pathfinding.PathFinding;
 import de.tum.cit.ase.maze.Utilities.BoundingBox;
 import de.tum.cit.ase.maze.Utilities.SpriteSheet;
 
@@ -14,21 +12,88 @@ import java.util.List;
 
 public class Ghost2 extends Enemy{
 
-    SpriteSheet sheet;
-    PathFinding pathFinding;
-    List<Vector2> path;
-    Vector2 target;
-    Vector2 vel;
-    float speed;
-    int currentTargetIndex;
+    private SpriteSheet sheet;
+    private de.tum.cit.ase.maze.Pathfinding.A_Star AStar;
+    private List<Vector2> path;
+    private Vector2 target,vel;
+    private float speed;
+    private int currentTargetIndex;
     int scaleX = 1;
     Player player;
+
+    public SpriteSheet getSheet() {
+        return sheet;
+    }
+
+    public void setSheet(SpriteSheet sheet) {
+        this.sheet = sheet;
+    }
+
+    public de.tum.cit.ase.maze.Pathfinding.A_Star getPathFinding() {
+        return AStar;
+    }
+
+    public void setPathFinding(de.tum.cit.ase.maze.Pathfinding.A_Star AStar) {
+        this.AStar = AStar;
+    }
+
+    public List<Vector2> getPath() {
+        return path;
+    }
+
+    public void setPath(List<Vector2> path) {
+        this.path = path;
+    }
+
+    public Vector2 getTarget() {
+        return target;
+    }
+
+    public void setTarget(Vector2 target) {
+        this.target = target;
+    }
+
+    public Vector2 getVel() {
+        return vel;
+    }
+
+    public void setVel(Vector2 vel) {
+        this.vel = vel;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
+
+    public int getCurrentTargetIndex() {
+        return currentTargetIndex;
+    }
+
+    public void setCurrentTargetIndex(int currentTargetIndex) {
+        this.currentTargetIndex = currentTargetIndex;
+    }
+
+    public int getScaleX() {
+        return scaleX;
+    }
+
+    public void setScaleX(int scaleX) {
+        this.scaleX = scaleX;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
 
     public Ghost2(Vector2 pos, Maps map) {
         super(pos, null);
         sheet = new SpriteSheet(new Texture("ghost-Sheet2.png"),1,4);
         sheet.setPlay(0, 3, 0.02f, true);
-        pathFinding = new PathFinding(map);
+        AStar = new de.tum.cit.ase.maze.Pathfinding.A_Star(map);
 
 
         currentTargetIndex = 0;
@@ -46,12 +111,12 @@ public class Ghost2 extends Enemy{
             return;
         }
         this.player = player;
-        Block destCell = pathFinding.getMap().getCell((int) player.getPosition().y/16,(int) player.getPosition().x/16);
-        path = pathFinding.findPath((int)getPosition().x/16,(int)getPosition().y/16,destCell.getColumn(),destCell.getRow() );
+        Block destCell = AStar.getMap().getCell((int) player.getPosition().y/16,(int) player.getPosition().x/16);
+        path = AStar.findPath((int)getPosition().x/16,(int)getPosition().y/16,destCell.getColumn(),destCell.getRow() );
     }
 
     @Override
-    public BoundingBox getRect(){
+    public BoundingBox box(){
         return new BoundingBox(getPosition().x + 2,getPosition().y + 2,sheet.getWidth() - 4, (float) sheet.getHeight() /2 - 4);
     }
 
@@ -66,8 +131,8 @@ public class Ghost2 extends Enemy{
             if(currentTargetIndex >= path.size()){
 
                 if(this.player != null){
-                    Block destCell = pathFinding.getMap().getCell((int) player.getPosition().y/16,(int) player.getPosition().x/16);
-                    path = pathFinding.findPath((int)getPosition().x/16,(int)getPosition().y/16,destCell.getColumn(),destCell.getRow() );
+                    Block destCell = AStar.getMap().getCell((int) player.getPosition().y/16,(int) player.getPosition().x/16);
+                    path = AStar.findPath((int)getPosition().x/16,(int)getPosition().y/16,destCell.getColumn(),destCell.getRow() );
                     currentTargetIndex = 0;
                 }
                 return;
