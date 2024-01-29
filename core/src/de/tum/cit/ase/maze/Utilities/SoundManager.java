@@ -22,7 +22,7 @@ public class SoundManager {
     }
 
 
-    public void play(String sound, float volume) {
+    public void play(String sound, float  volume) {
         sounds.get(sound).play(volume);
     }
 

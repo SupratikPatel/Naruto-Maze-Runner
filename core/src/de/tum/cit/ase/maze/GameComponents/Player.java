@@ -2,9 +2,14 @@ package de.tum.cit.ase.maze.GameComponents;
 
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.graphics.g2d.Batch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import de.tum.cit.ase.maze.Utilities.BoundingBox;
 import de.tum.cit.ase.maze.Utilities.SpriteSheet;
+import de.tum.cit.ase.maze.Utilities.Manager;
+import com.badlogic.gdx.math.Vector2;
 
+import java.util.List;
 public class Player extends GameEntities{
     float speed;
     SpriteSheet walk_down, walk_up,walk_left,walk_right;
@@ -12,6 +17,7 @@ public class Player extends GameEntities{
     Vector2 direction,facing_direction;
     boolean shooting=false;
     float shoot_time=0;
+    int bulletCount=0;
 
     public float getSpeed() {
         return speed;
@@ -93,7 +99,7 @@ public class Player extends GameEntities{
         this.shoot_time = shoot_time;
     }
 
-    public Player(Vector2 position){
+    public Player(Vector2 position) {
         super(position, null);
         walk_down=new SpriteSheet(new Texture("player_walk.png"),4,4);
         walk_right=new SpriteSheet(new Texture("player_walk.png"),4,4);
@@ -175,8 +181,43 @@ public class Player extends GameEntities{
         if(velocity.x!=0 || velocity.y!=0){
             sheet.play();
         }
-
+        for(int row = 0; row < maps.getNum_Of_Rows();row++) {
+            for (int col = 0; col < maps.getNum_Of_Column(); col++) {
+                Block cell = maps.getCell(row,col);
+                if(cell.getBlocksType() == BlockType.WALL && cell.rectangle().collide(this.getRect())){
+                    position = previous_position;
+                    return;
+                }
+            }
+        }
+        if(position.x < 0){
+            position.x = 0;
+        }
+        if(position.y < 0){
+            position.y = 0;
+        }
+    }
+    public void shoot(List<GameEntities> objects){
+        if(shooting){
+            bulletCount--;
+            objects.add(new BulletProps(new Vector2(position.x,position.y),new Vector2(facing_direction.x,facing_direction.y)));
+            shooting = false;
+            Manager.getInstance().soundManager.play("shoot",0.2f);
+        }
     }
 
+    @Override
+    public BoundingBox getRect(){
+        return new BoundingBox(position.x + 2,position.y + 2,sheet.getWidth() - 4, (float) sheet.getHeight() /2 - 4);
+    }
+
+    @Override
+    public void draw(Batch batch) {
+        // draw currentFrame of player at position x y
+        batch.begin();
+        TextureRegion t = sheet.getCurrentFrames();
+        batch.draw(t, position.x ,position.y , (float) sheet.getWidth() /2, (float) sheet.getHeight() /2,sheet.getWidth(),sheet.getHeight(),1,1,0);
+        batch.end();
+    }
 
 }
