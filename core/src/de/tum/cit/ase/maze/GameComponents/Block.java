@@ -27,23 +27,12 @@ public class Block {
     public int getRow() {
         return row;
     }
-
-    public void setRow(int row) {
-        this.row = row;
-    }
-
     public int getColumn() {
         return column;
     }
-
-    public void setColumn(int column) {
-        this.column = column;
-    }
-
     public BlockType getBlocksType() {
         return blockType;
     }
-
     public void setBlocksType(BlockType blockType) {
         this.blockType = blockType;
     }

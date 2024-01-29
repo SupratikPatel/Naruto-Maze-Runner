@@ -104,69 +104,6 @@ public class Ghost1 extends Enemy {
     }
 
     // Getter and setter methods for the ghost's properties...
-    public SpriteSheet getSheet() {
-        return sheet;
-    }
-
-    public void setSheet(SpriteSheet sheet) {
-        this.sheet = sheet;
-    }
-
-    public A_Star getPathFinding() {
-        return AStar;
-    }
-
-    public void setPathFinding(A_Star AStar) {
-        this.AStar = AStar;
-    }
-
-    public List<Vector2> getPath() {
-        return path;
-    }
-
-    public void setPath(List<Vector2> path) {
-        this.path = path;
-    }
-
-    public Vector2 getTarget() {
-        return target;
-    }
-
-    public void setTarget(Vector2 target) {
-        this.target = target;
-    }
-
-    public Vector2 getVel() {
-        return vel;
-    }
-
-    public void setVel(Vector2 vel) {
-        this.vel = vel;
-    }
-
-    public float getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(float speed) {
-        this.speed = speed;
-    }
-
-    public int getCurrentTargetIndex() {
-        return currentTargetIndex;
-    }
-
-    public void setCurrentTargetIndex(int currentTargetIndex) {
-        this.currentTargetIndex = currentTargetIndex;
-    }
-
-    public int getScaleX() {
-        return scaleX;
-    }
-
-    public void setScaleX(int scaleX) {
-        this.scaleX = scaleX;
-    }
 
     public Player getPlayer() {
         return player;

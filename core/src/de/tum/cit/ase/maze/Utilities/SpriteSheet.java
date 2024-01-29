@@ -83,22 +83,6 @@ public class SpriteSheet {
         return width;
     }
 
-    public int getCurrent() {
-        return current;
-    }
-
-    public void setCurrent(int current) {
-        this.current = current;
-    }
-
-    public float getCountTime() {
-        return countTime;
-    }
-
-    public void setCountTime(float countTime) {
-        this.countTime = countTime;
-    }
-
     public TextureRegion getTexture(int frames) {
         return this.frames[frames];
     }
@@ -115,13 +99,6 @@ public class SpriteSheet {
         this.texture = texture;
     }
 
-    public boolean isLoop() {
-        return loop;
-    }
-
-    public void setLoop(boolean loop) {
-        this.loop = loop;
-    }
 
     public int getRows() {
         return rows;
@@ -135,18 +112,6 @@ public class SpriteSheet {
         return columns;
     }
 
-    public void setColumns(int columns) {
-        this.columns = columns;
-    }
-
-    public int getFrom() {
-        return from;
-    }
-
-    public void setFrom(int from) {
-        this.from = from;
-    }
-
     public int getTo() {
         return to;
     }
@@ -155,28 +120,6 @@ public class SpriteSheet {
         this.to = to;
     }
 
-    public void setHeight(int height) {
-        this.height = height;
-    }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public float getTime() {
-        return time;
-    }
-
-    public void setTime(float time) {
-        this.time = time;
-    }
-
-    public TextureRegion[] getFrames() {
-        return frames;
-    }
-
-    public void setFrames(TextureRegion[] frames) {
-        this.frames = frames;
-    }
 
 }
