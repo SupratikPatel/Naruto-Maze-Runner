@@ -14,15 +14,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.scenes.scene2d.utils.TextureRegionDrawable;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.*;
-import de.tum.cit.ase.maze.GameComponents.GameEntities;
 import de.tum.cit.ase.maze.Utilities.Camera;
 import de.tum.cit.ase.maze.Utilities.Manager;
 import de.tum.cit.ase.maze.GameComponents.*;
-import de.tum.cit.ase.maze.GameComponents.Enemy;
-import de.tum.cit.ase.maze.GameComponents.Key;
-import de.tum.cit.ase.maze.GameComponents.Traps;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,12 +61,12 @@ public class GameScreen implements Screen {
 
     public GameScreen(MazeRunnerGame game,String mapPath) {
         this.game = game;
-        objects = new ArrayList();
+        objects = new ArrayList<>();
 
 
         // Create and configure the camera for the game view
         camera = new OrthographicCamera(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-//       camera.setToOrtho(false);
+//        camera.setToOrtho(false);
         viewport = new ScreenViewport(camera);
         stage = new Stage(); // Create a stage for UI elements
 
@@ -81,10 +79,10 @@ public class GameScreen implements Screen {
         batch = game.getSpriteBatch();
         map = new Maps(mapPath,objects);
         player = new Player(new Vector2(map.getEntryBlock().getColumn() * 16,map.getEntryBlock().getRow() * 16));
-        initInput();
+        keyInput();
         followCamera = new Camera(camera,map);
 
-        spawnBanana();
+        spawnBullet();
 
         score  = 0;
         time = 0;
@@ -94,17 +92,17 @@ public class GameScreen implements Screen {
 
     }
 
-    public void createUI(){
+    void createUI(){
         Table table = new Table(); // Create a table for layout
         table.setFillParent(true); // Make the table fill the stage
         stage.addActor(table); // Add the table to the stage
-        table.center().bottom();
+        table.center().top();
 
 
         // heart
         Table heartTable = new Table();
         table.add(heartTable);
-//        heartTable.setBackground(new TextureRegionDrawable(new Texture("uiBox.png")));
+        heartTable.setBackground(new TextureRegionDrawable(new Texture("uiBox.png")));
 
         Image hearthImg = new Image(new Texture("heart.png"));
         heartLabel = new Label("1",game.getSkin());
@@ -116,10 +114,10 @@ public class GameScreen implements Screen {
         // score
         Table scoreTable = new Table();
         table.add(scoreTable);
-//        scoreTable.setBackground(new TextureRegionDrawable(new Texture("uiBox.png")));
+        scoreTable.setBackground(new TextureRegionDrawable(new Texture("uiBox.png")));
 
         Label label2 = new Label("Score:",game.getSkin());
-        scoreLabel = new Label("3400",game.getSkin());
+        scoreLabel = new Label("10000",game.getSkin());
         label2.setColor(Color.BLACK);
         label2.setFontScale(0.6f);
         scoreLabel.setFontScale(0.6f);
@@ -130,7 +128,7 @@ public class GameScreen implements Screen {
         // time
         Table timeTable = new Table();
         table.add(timeTable);
-//        timeTable.setBackground(new TextureRegionDrawable(new Texture("uiBox.png")));
+        timeTable.setBackground(new TextureRegionDrawable(new Texture("uiBox.png")));
 
         Label label3 = new Label("Time:",game.getSkin());
         timeLabel = new Label("120s",game.getSkin());
@@ -144,7 +142,7 @@ public class GameScreen implements Screen {
         // key
         Table keyTable = new Table();
         table.add(keyTable);
-//        keyTable.setBackground(new TextureRegionDrawable(new Texture("uiBox.png")));
+        keyTable.setBackground(new TextureRegionDrawable(new Texture("uiBox.png")));
 
         keyLabel = new Label("0/" + map.getKeyCount(),game.getSkin());
         keyLabel.setFontScale(0.6f);
@@ -155,7 +153,7 @@ public class GameScreen implements Screen {
         missingKeyLabel = new Label("missing key!",game.getSkin());
         missingKeyLabel.setVisible(false);
         missingKeyLabel.setColor(Color.WHITE);
-        missingKeyLabel.setPosition(Gdx.graphics.getWidth()/2 - missingKeyLabel.getWidth()/2,Gdx.graphics.getHeight()/2 - missingKeyLabel.getHeight()/2);
+        missingKeyLabel.setPosition((float) Gdx.graphics.getWidth() /2 - missingKeyLabel.getWidth()/2, (float) Gdx.graphics.getHeight() /2 - missingKeyLabel.getHeight()/2);
         stage.addActor(missingKeyLabel);
 
 
@@ -188,7 +186,7 @@ public class GameScreen implements Screen {
         Manager.getInstance().soundManager.playGameMusic();
     }
 
-    public void initInput(){
+    void keyInput(){
         InputMultiplexer mixInput = new InputMultiplexer();
         mixInput.addProcessor(stage);
         mixInput.addProcessor(new InputAdapter(){
@@ -217,11 +215,22 @@ public class GameScreen implements Screen {
         }
         ScreenUtils.clear(0, 0, 0, 1);
 
+
+
+
+
+
+
 //        camera.position.x += (viewport.getScreenX() + viewport.getScreenWidth()/4 + delta - camera.position.x) * 1 * delta;
         camera.update();
         batch.setProjectionMatrix(viewport.getCamera().combined);
 
         if(!gamePause){
+            // collision player with other objects
+            collision2();
+
+            // collision between objects
+            collision();
             followCamera.follow(player.getPosition());
 
             // update time,score,heart
@@ -242,57 +251,26 @@ public class GameScreen implements Screen {
             objects.addAll(addedObjects);
 
             missingKeyLabel.setVisible(false);
-            for(int row = 0; row < map.getNum_Of_Rows(); row++) {
+            for(int row = 0; row < map.getNum_Of_Rows();row++) {
                 for (int col = 0; col < map.getNum_Of_Column(); col++) {
                     Block block = map.getCell(row,col);
                     if(block.getBlocksType() == BlockType.EXIT && block.rectangle().collide(player.getRect())){
+
                         if(keyCount == map.getKeyCount()){
                             score += 100;
+                            Manager.getInstance().soundManager.play("win",1.0f);//win
                             game.goToVictoryScreen(score,time);
                             return;
                         }
                         else {
                             missingKeyLabel.setVisible(true);
+                            Manager.getInstance().soundManager.play("item",1.0f);//win
                         }
                     }
                 }
             }
 
-            // collision player with other objects
-            for(GameEntities obj : objects){
-                if(obj instanceof Ghost2){
-                    ((Ghost2)obj).setPlayer(player);
-                }
-                if(obj instanceof Enemy && obj.getRect().collide(player.getRect())){
-                    playerDie();
-                }
-                else if(obj instanceof Key && obj.getRect().collide(player.getRect())){
-                    obj.destroyFlAG = true;
-                    keyCount++;
-                    score += 50;
-                    Manager.getInstance().soundManager.play("item",1.0f);
-                }
-                else if(obj instanceof Traps && obj.getRect().collide(player.getRect())){
-                    playerDie();
-                }
-            }
 
-            // collision between objects
-            for(GameEntities obj : objects){
-                for(GameEntities otherObj: objects){
-                    if(obj == otherObj){
-                        continue;
-                    }
-                    if(obj instanceof Bullet && (otherObj instanceof Enemy || otherObj instanceof Traps)){
-                        if(obj.getRect().collide(otherObj.getRect())){
-                            score += 5;
-                            obj.destroyFlAG = true;
-                            otherObj.destroyFlAG = true;
-                        }
-                    }
-
-                }
-            }
 
             for(int i = 0; i < objects.size();i++){
                 if(objects.get(i).destroyFlAG){
@@ -302,6 +280,10 @@ public class GameScreen implements Screen {
         }
 
         //draw
+        draw();
+
+    }
+    public void draw(){
         map.draw(batch,player);
 
         for(GameEntities obj : objects){
@@ -317,21 +299,68 @@ public class GameScreen implements Screen {
         stage.draw(); // Draw the stage
 
 
+        // debug
+//        Utils.getInstance().drawRect(player.getRect(),camera);
+//        for(int row = 0; row < map.getRows();row++) {
+//            for (int col = 0; col < map.getCols(); col++) {
+//                Block cell = map.getCell(row,col);
+//                Utils.getInstance().drawRect(cell.getRect(),camera);
+//            }
+//        }
 
         viewport.apply(false);
     }
 
-    public void  playerDie(){
+    public void collision(){
+        for(GameEntities obj : objects){
+            for(GameEntities otherObj: objects){
+                if(obj == otherObj){
+                    continue;
+                }
+                if(obj instanceof Bullet && (otherObj instanceof Ghost2 || otherObj instanceof Traps)){
+                    if(obj.getRect().collide(otherObj.getRect())){
+                        score += 10;
+                        obj.destroyFlAG = true;
+                        otherObj.destroyFlAG = true;
+                    }
+                }
+
+            }
+        }
+    }
+    public void collision2(){
+        for(GameEntities obj : objects){
+            if(obj instanceof Ghost2){
+                ((Ghost2)obj).setPlayer(player);
+            }
+            if(obj instanceof Enemy && obj.getRect().collide(player.getRect())){
+                Manager.getInstance().soundManager.play("death",1.0f);
+                playerDie();
+            }
+            else if(obj instanceof Key && obj.getRect().collide(player.getRect())){
+                obj.destroyFlAG = true;
+                keyCount++;
+                score += 50;
+                Manager.getInstance().soundManager.play("item",1.0f);
+            }
+            else if(obj instanceof Traps && obj.getRect().collide(player.getRect())){
+                Manager.getInstance().soundManager.play("death",1.0f);
+                playerDie();
+            }
+        }
+    }
+    void playerDie(){
         heart--;
         Block entryBlock = map.getEntryBlock();
         player.setPosition(new Vector2(entryBlock.getColumn() * 16, entryBlock.getRow() * 16));
         Manager.getInstance().soundManager.play("death",1.0f);
         if(heart <= 0){
+            Manager.getInstance().soundManager.play("death2",2.0f);
             game.goToGameOverScreen(score,time);
         }
     }
 
-    public void spawnBanana(){
+    void spawnBullet(){
         Block emptyBlock = map.getRandomEmptyCell();
         while (Vector2.dst(player.getPosition().x,player.getPosition().y, emptyBlock.getColumn()*16, emptyBlock.getRow() * 16) > 200){
             emptyBlock = map.getRandomEmptyCell();
@@ -343,7 +372,7 @@ public class GameScreen implements Screen {
     public void resize(int width, int height) {
         camera.setToOrtho(false);
         viewport.update(width,height,false);
-
+//        stage.getViewport().update(width, height, false); // Update the stage viewport on resize
     }
 
     @Override

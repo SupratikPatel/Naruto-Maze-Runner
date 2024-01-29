@@ -1,5 +1,6 @@
 package de.tum.cit.ase.maze.GameComponents;
 
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -22,7 +23,7 @@ public class Ghost1 extends Enemy{
 
     public Ghost1(Vector2 pos, Maps map) {
         super(pos, null);
-        sheet = new SpriteSheet(new Texture("ghost-Sheet.png"),1,4);
+        sheet = new SpriteSheet(new Texture("ghost-Sheet02.png"),1,4);
         sheet.setPlay(0, 3, 0.02f, true);
         pathFinding = new PathFinding(map);
 
@@ -37,12 +38,13 @@ public class Ghost1 extends Enemy{
 
     @Override
     public BoundingBox getRect(){
-        return new BoundingBox(position.x + 2,position.y + 2,sheet.getWidth() - 4, (float) sheet.getHeight() /2 - 4);
+        return new BoundingBox(position.x + 2,position.y + 2,sheet.getWidth() - 4, sheet.getHeight() /2 - 4);
     }
 
     @Override
     public void update() {
         super.update();
+
 
         if(Vector2.dst(position.x,position.y,target.x,target.y) <= 1.0){
             currentTargetIndex += 1;
@@ -74,6 +76,7 @@ public class Ghost1 extends Enemy{
 
     @Override
     public void draw(Batch batch) {
+
         batch.begin();
         TextureRegion t = sheet.getCurrentFrames();
         batch.draw(t, position.x ,position.y , (float) sheet.getWidth() /2, (float) sheet.getHeight() /2,sheet.getWidth(),sheet.getHeight(),scaleX,1,0);

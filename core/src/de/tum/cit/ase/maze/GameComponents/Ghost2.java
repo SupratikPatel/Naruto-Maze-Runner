@@ -1,5 +1,6 @@
 package de.tum.cit.ase.maze.GameComponents;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -31,7 +32,7 @@ public class Ghost2 extends Enemy{
 
 
         currentTargetIndex = 0;
-        speed = 2.0F;
+        speed = 1.0F;
         target = new Vector2(pos.x ,pos.y);
         vel = new Vector2(0,0);
         this.player = null;
@@ -57,6 +58,8 @@ public class Ghost2 extends Enemy{
     @Override
     public void update() {
         super.update();
+
+     //   Gdx.app.log("Ghos2", "Update method called");
 
         if(Vector2.dst(getPosition().x,getPosition().y,target.x,target.y) <= 1.0){
             currentTargetIndex += 1;
@@ -92,6 +95,8 @@ public class Ghost2 extends Enemy{
     @Override
     public void draw(Batch batch) {
         // draw currentFrame of player at position x y
+
+     //   Gdx.app.log("Ghost2", "Draw method called");
         batch.begin();
         TextureRegion t = sheet.getCurrentFrames();
         batch.draw(t, getPosition().x ,getPosition().y , (float) sheet.getWidth() /2, (float) sheet.getHeight() /2,sheet.getWidth(),sheet.getHeight(),scaleX,1,0);

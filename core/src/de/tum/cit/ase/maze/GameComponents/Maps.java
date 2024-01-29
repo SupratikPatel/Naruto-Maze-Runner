@@ -196,6 +196,11 @@ public class Maps {
     }
 
     private void processEnemyCell(List<GameEntities> entities, Block block) {
+        if (random.nextInt(10) <= 3) {
+            entities.add(new Ghost2(new Vector2(block.getColumn() *16, block.getRow() * 16), this));
+        } else {
+            entities.add(new Ghost1(new Vector2(block.getColumn() * 16, block.getRow() * 16), this));
+        }
 
     }
     private void populateEmptyCells() {
@@ -230,12 +235,12 @@ public class Maps {
                 }
 
                 if (block.getBlocksType() == null) {
-                    drawCell(batch, block, tileSheet.getTexture(73));
+                    drawCell(batch, block, tileSheet.getTexture(65));
                 } else {
                     //using enhanced switched method
                     switch (block.getBlocksType()) {
-                        case WALL -> drawCell(batch, block, tileSheet.getTexture(1));
-                        case ENTRY_POINT, TRAP, ENEMY, KEY -> drawCell(batch, block, tileSheet.getTexture(73));
+                        case WALL -> drawCell(batch, block, tileSheet.getTexture(15));
+                        case ENTRY_POINT, TRAP, ENEMY, KEY -> drawCell(batch, block, tileSheet.getTexture(65));
                         case EXIT -> drawCell(batch, block, tileSheet.getTexture(36));
                     }
                 }
