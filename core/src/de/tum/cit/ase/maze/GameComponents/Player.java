@@ -91,31 +91,31 @@ public class Player extends GameEntities {
      */
     //Players movement when arrow keys are pressed
     public void Key_Pressed(int keystroke){
-        switch(keystroke) {
-            case Input.Keys.LEFT:
-                direction = new Vector2(-1,0);
+        switch (keystroke) {
+            case Input.Keys.LEFT -> {
+                direction = new Vector2(-1, 0);
                 sheet = walk_left;
-                facing_direction = new Vector2(direction.x,direction.y);
-                break;
-            case Input.Keys.RIGHT:
-                direction = new Vector2(1,0);
+                facing_direction = new Vector2(direction.x, direction.y);
+            }
+            case Input.Keys.RIGHT -> {
+                direction = new Vector2(1, 0);
                 sheet = walk_right;
-                facing_direction = new Vector2(direction.x,direction.y);
-                break;
-            case Input.Keys.UP:
-                direction = new Vector2(0,1);
+                facing_direction = new Vector2(direction.x, direction.y);
+            }
+            case Input.Keys.UP -> {
+                direction = new Vector2(0, 1);
                 sheet = walk_up;
-                facing_direction = new Vector2(direction.x,direction.y);
-                break;
-            case Input.Keys.DOWN:
-                direction = new Vector2(0,-1);
+                facing_direction = new Vector2(direction.x, direction.y);
+            }
+            case Input.Keys.DOWN -> {
+                direction = new Vector2(0, -1);
                 sheet = walk_down;
-                facing_direction = new Vector2(direction.x,direction.y);
-                break;
-            case Input.Keys.SPACE:
+                facing_direction = new Vector2(direction.x, direction.y);
+            }
+            case Input.Keys.SPACE -> {
                 shoot_time = 0;
                 shooting = true;
-                break;
+            }
         }
     }
     /**
