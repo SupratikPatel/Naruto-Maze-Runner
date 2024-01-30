@@ -14,18 +14,22 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import de.tum.cit.ase.maze.Utilities.Manager;
-
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 /**
- * The `MenuScreen` class is responsible for displaying the main menu of the game.
- * It extends the LibGDX `Screen` class and sets up the UI components for the menu.
+ * The MenuScreen class is responsible for displaying the main menu of the game.
+ * It extends the LibGDX Screen class and sets up the UI components for the menu.
  */
 public class MenuScreen implements Screen {
 
     private Stage stage;
     private final MazeRunnerGame game;
+    private final Texture backgroundTexture;
+    private final Sprite backgroundSprite;
 
     /**
-     * Constructor for `MenuScreen`.
+     * Constructor for MenuScreen.
      *
      * @param game The game instance associated with this screen.
      */
@@ -33,6 +37,10 @@ public class MenuScreen implements Screen {
         this.game = game;
         initializeStage();
         setupUI();
+        // Load the background texture and create a sprite
+        backgroundTexture = new Texture(Gdx.files.internal("background.png"));
+        backgroundSprite = new Sprite(backgroundTexture);
+        backgroundSprite.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 
     /**
@@ -40,7 +48,7 @@ public class MenuScreen implements Screen {
      */
     private void initializeStage() {
         OrthographicCamera camera = new OrthographicCamera();
-        camera.zoom = 1.5f;
+        camera.zoom = 1.0f;
         Viewport viewport = new ScreenViewport(camera);
         stage = new Stage(viewport, game.getSpriteBatch());
     }
@@ -94,6 +102,10 @@ public class MenuScreen implements Screen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // Clear the screen
+        // Draw the background sprite
+        game.getSpriteBatch().begin();
+        backgroundSprite.draw(game.getSpriteBatch());
+        game.getSpriteBatch().end();
         stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f)); // Update the stage
         stage.draw(); // Draw the stage
     }
@@ -111,6 +123,8 @@ public class MenuScreen implements Screen {
      */
     @Override
     public void dispose() {
+        // Dispose of the background texture
+        backgroundTexture.dispose();
         // Dispose of the stage when the screen is disposed
         stage.dispose();
     }
@@ -124,14 +138,14 @@ public class MenuScreen implements Screen {
         Gdx.input.setInputProcessor(stage);
     }
 
-    // The following methods are part of the `Screen` interface but are not used in this screen.
+    // The following methods are part of the Screen interface but are not used in this screen.
 
     /**
      * Unused method. Does nothing.
      */
     @Override
     public void pause() {
-     }
+    }
 
     /**
      * Unused method. Does nothing.
