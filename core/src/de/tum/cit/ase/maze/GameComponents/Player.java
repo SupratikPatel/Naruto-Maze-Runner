@@ -31,17 +31,33 @@ public class Player extends GameEntities {
      */
     public Player(Vector2 position) {
         super(position, null);
-        walk_down = new SpriteSheet(new Texture("player_walk.png"),4,4);
+        walk_down = new SpriteSheet(new Texture("player_walk1.png"),4,4);
         walk_down.setPlay(0, 3, 0.1f, true);
 
-        walk_right = new SpriteSheet(new Texture("player_walk.png"),4,4);
-        walk_right.setPlay(8, 11, 0.1f, true);
+        walk_right = new SpriteSheet(new Texture("player_walk1.png"),4,4);
+        walk_right.setPlay(4, 7, 0.1f, true);
 
-        walk_up = new SpriteSheet(new Texture("player_walk.png"),4,4);
-        walk_up.setPlay(12, 15, 0.1f, true);
+        walk_up = new SpriteSheet(new Texture("player_walk1.png"),4,4);
+        walk_up.setPlay(8, 11, 0.1f, true);
 
-        walk_left = new SpriteSheet(new Texture("player_walk.png"),4,4);
-        walk_left.setPlay(4, 7, 0.1f, true);
+        walk_left = new SpriteSheet(new Texture("player_walk1.png"),4,4);
+        walk_left.setPlay(12, 15, 0.1f, true);
+
+
+        //Our Own Player Design
+//        walk_down = new SpriteSheet(new Texture("player_walk.png"),4,4);
+//        walk_down.setPlay(0, 3, 0.1f, true);
+//
+//        walk_right = new SpriteSheet(new Texture("player_walk.png"),4,4);
+//        walk_right.setPlay(8, 11, 0.1f, true);
+//
+//        walk_up = new SpriteSheet(new Texture("player_walk.png"),4,4);
+//        walk_up.setPlay(12, 15, 0.1f, true);
+//
+//        walk_left = new SpriteSheet(new Texture("player_walk.png"),4,4);
+//        walk_left.setPlay(4, 7, 0.1f, true);
+
+
 
         sheet = walk_up;
 
