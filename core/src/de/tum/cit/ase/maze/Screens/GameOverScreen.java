@@ -59,9 +59,9 @@ public class GameOverScreen implements Screen {
         Label timeLabel = new Label("Time: " + String.format("%.2fs", time), game.getSkin(), "title");
 
         gameOverLabel.setColor(Color.RED);
-        table.add(gameOverLabel).padBottom(80).row();
-        table.add(scoreLabel).padBottom(80).row();
-        table.add(timeLabel).padBottom(80).row();
+        table.add(gameOverLabel).padBottom(100).row();
+        table.add(scoreLabel).padBottom(100).row();
+        table.add(timeLabel).padBottom(100).row();
 
         TextButton goToGameButton = new TextButton("Menu", game.getSkin());
         table.add(goToGameButton).width(300).row();
