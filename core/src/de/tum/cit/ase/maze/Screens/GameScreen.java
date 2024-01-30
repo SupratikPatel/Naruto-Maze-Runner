@@ -297,7 +297,7 @@ public class GameScreen implements Screen {
                 if (obj == otherObj) {
                     continue;
                 }
-                if (obj instanceof Bullet && (otherObj instanceof Enemy || otherObj instanceof Traps)) {
+                if (obj instanceof Bullet && (otherObj instanceof Ghost2 || otherObj instanceof Traps)) {
                     if (obj.box().collide(otherObj.box())) {
                         score += 10;
                         obj.destroyFlAG = true;

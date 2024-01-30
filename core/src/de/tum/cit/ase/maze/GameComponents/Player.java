@@ -29,19 +29,35 @@ public class Player extends GameEntities {
      *
      * @param position The initial position of the player in the game world.
      */
-    public Player(Vector2 position) {
+    public Player(Vector2 position)  {
         super(position, null);
-        walk_down = new SpriteSheet(new Texture("player_walk.png"),4,4);
+        walk_down = new SpriteSheet(new Texture("player_walk1.png"),4,4);
         walk_down.setPlay(0, 3, 0.1f, true);
 
-        walk_right = new SpriteSheet(new Texture("player_walk.png"),4,4);
-        walk_right.setPlay(8, 11, 0.1f, true);
+        walk_right = new SpriteSheet(new Texture("player_walk1.png"),4,4);
+        walk_right.setPlay(4, 7, 0.1f, true);
 
-        walk_up = new SpriteSheet(new Texture("player_walk.png"),4,4);
-        walk_up.setPlay(12, 15, 0.1f, true);
+        walk_up = new SpriteSheet(new Texture("player_walk1.png"),4,4);
+        walk_up.setPlay(8, 11, 0.1f, true);
 
-        walk_left = new SpriteSheet(new Texture("player_walk.png"),4,4);
-        walk_left.setPlay(4, 7, 0.1f, true);
+        walk_left = new SpriteSheet(new Texture("player_walk1.png"),4,4);
+        walk_left.setPlay(12, 15, 0.1f, true);
+
+
+        //Our Own Player Design
+//        walk_down = new SpriteSheet(new Texture("player_walk.png"),4,4);
+//        walk_down.setPlay(0, 3, 0.1f, true);
+//
+//        walk_right = new SpriteSheet(new Texture("player_walk.png"),4,4);
+//        walk_right.setPlay(8, 11, 0.1f, true);
+//
+//        walk_up = new SpriteSheet(new Texture("player_walk.png"),4,4);
+//        walk_up.setPlay(12, 15, 0.1f, true);
+//
+//        walk_left = new SpriteSheet(new Texture("player_walk.png"),4,4);
+//        walk_left.setPlay(4, 7, 0.1f, true);
+
+
 
         sheet = walk_up;
 
@@ -91,31 +107,31 @@ public class Player extends GameEntities {
      */
     //Players movement when arrow keys are pressed
     public void Key_Pressed(int keystroke){
-        switch(keystroke) {
-            case Input.Keys.LEFT:
-                direction = new Vector2(-1,0);
+        switch (keystroke) {
+            case Input.Keys.LEFT -> {
+                direction = new Vector2(-1, 0);
                 sheet = walk_left;
-                facing_direction = new Vector2(direction.x,direction.y);
-                break;
-            case Input.Keys.RIGHT:
-                direction = new Vector2(1,0);
+                facing_direction = new Vector2(direction.x, direction.y);
+            }
+            case Input.Keys.RIGHT -> {
+                direction = new Vector2(1, 0);
                 sheet = walk_right;
-                facing_direction = new Vector2(direction.x,direction.y);
-                break;
-            case Input.Keys.UP:
-                direction = new Vector2(0,1);
+                facing_direction = new Vector2(direction.x, direction.y);
+            }
+            case Input.Keys.UP -> {
+                direction = new Vector2(0, 1);
                 sheet = walk_up;
-                facing_direction = new Vector2(direction.x,direction.y);
-                break;
-            case Input.Keys.DOWN:
-                direction = new Vector2(0,-1);
+                facing_direction = new Vector2(direction.x, direction.y);
+            }
+            case Input.Keys.DOWN -> {
+                direction = new Vector2(0, -1);
                 sheet = walk_down;
-                facing_direction = new Vector2(direction.x,direction.y);
-                break;
-            case Input.Keys.SPACE:
+                facing_direction = new Vector2(direction.x, direction.y);
+            }
+            case Input.Keys.SPACE -> {
                 shoot_time = 0;
                 shooting = true;
-                break;
+            }
         }
     }
     /**
