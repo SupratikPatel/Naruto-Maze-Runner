@@ -90,7 +90,7 @@ public class MenuScreen implements Screen {
 
         BitmapFont font = new BitmapFont(); // You might want to load a custom font instead
         Label.LabelStyle style = new Label.LabelStyle(font, Color.WHITE);
-        Label copyrightLabel = new Label("© 2024 Wahaj and Supratik", style);
+        Label copyrightLabel = new Label("© 2024 Wahaj and SuperUser", style);
         copyrightLabel.setFontScale(1f); // Adjust the scale as needed
 
         table.add(copyrightLabel).bottom().right().padTop(260).padRight(10).expandX();
