@@ -5,90 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added JavaDoc folder in src">
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/allclasses-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/allpackages-index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/copy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/DesktopLauncher.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Block.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/BlockType.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Bullet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Enemy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/GameEntities.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Ghost1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Ghost2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Key.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Maps.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Player.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/Traps.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/GameComponents/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/PathFinding/A_Star.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/PathFinding/Node.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/PathFinding/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/PathFinding/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Screens/GameOverScreen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Screens/GameScreen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Screens/MazeRunnerGame.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Screens/MenuScreen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Screens/WinScreen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Screens/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Screens/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Utilities/BoundingBox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Utilities/Camera.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Utilities/Manager.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Utilities/SoundManager.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Utilities/SpriteSheet.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Utilities/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/Utilities/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/package-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/de/tum/cit/ase/maze/package-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/element-list" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/help-doc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-10.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-11.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-12.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-13.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-14.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-15.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-16.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-17.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-18.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-19.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-20.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-21.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-3.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-4.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-5.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-6.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-7.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index-files/index-9.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/legal/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/legal/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/legal/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/legal/jquery.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/legal/jqueryUI.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/link.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/member-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/module-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/overview-summary.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/overview-tree.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/package-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/resources/glass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/resources/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/script-dir/jquery-3.6.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/script-dir/jquery-ui.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/script-dir/jquery-ui.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/search-page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/search.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/stylesheet.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/tag-search-index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Java Doc/type-search-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fireanimation.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -132,7 +50,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -145,39 +62,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Run Game.executor": "Run",
-    "DefaultPlantUmlFileTemplate": "UML Class",
-    "Gradle.5th Try:desktop [:desktop:DesktopLauncher.main()].executor": "Run",
-    "Gradle.5th try:desktop [:desktop:DesktopLauncher.main()].executor": "Run",
-    "Gradle.Build 5th Try.executor": "Run",
-    "Gradle.Build 5th try.executor": "Run",
-    "Gradle.Build fophn2324infun2324projectworkx-teamutilrandom.executor": "Run",
-    "Gradle.fophn2324infun2324projectworkx-teamutilrandom:desktop [:desktop:DesktopLauncher.main()].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/supra/Desktop/Maze fkin Runner",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Run Game.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
+    &quot;Gradle.5th Try:desktop [:desktop:DesktopLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.5th try:desktop [:desktop:DesktopLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build 5th Try.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build 5th try.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Build fophn2324infun2324projectworkx-teamutilrandom.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.fophn2324infun2324projectworkx-teamutilrandom:desktop [:desktop:DesktopLauncher.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/supra/Desktop/Maze fkin Runner&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -216,7 +133,7 @@
       <workItem from="1706562433282" duration="688000" />
       <workItem from="1706572601550" duration="2159000" />
       <workItem from="1706574818777" duration="303000" />
-      <workItem from="1706575153760" duration="1852000" />
+      <workItem from="1706575153760" duration="4758000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -336,7 +253,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706576089120</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added JavaDoc folder in src">
+      <created>1706577355311</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1706577355311</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,6 +292,16 @@
     <MESSAGE value="Added some javaDocs" />
     <MESSAGE value="Added JavaDoc folder in src" />
     <option name="LAST_COMMIT_MESSAGE" value="Added JavaDoc folder in src" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
