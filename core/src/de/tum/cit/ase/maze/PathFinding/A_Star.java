@@ -12,12 +12,12 @@ import java.util.List;
  * This class is responsible for pathfinding in a grid-based map using the A* algorithm.
  */
 public class A_Star {
-    List<Node> open_list; // The set of nodes to be evaluated.
-    List<Node> close_list; // The set of nodes already evaluated.
+    List<Nodes> open_list; // The set of nodes to be evaluated.
+    List<Nodes> close_list; // The set of nodes already evaluated.
     Maps maps; // The game map.
 
-    Node startNode; // The starting node of the path.
-    Node endNode; // The ending node of the path.
+    Nodes startNodes; // The starting node of the path.
+    Nodes endNodes; // The ending node of the path.
 
     /**
      * Constructs an A* pathfinder with a reference to the game map.
@@ -33,14 +33,14 @@ public class A_Star {
     }
 
     /**
-     * Checks if a node is in the open list.
+     * Checks if a nodes is in the open list.
      *
-     * @param node The node to check.
-     * @return The node from the open list if it exists, null otherwise.
+     * @param nodes The nodes to check.
+     * @return The nodes from the open list if it exists, null otherwise.
      */
-    Node isInOpenList(Node node) {
-        for (Node n : open_list) {
-            if (n.equal(node)) {
+    Nodes isInOpenList(Nodes nodes) {
+        for (Nodes n : open_list) {
+            if (n.equal(nodes)) {
                 return n;
             }
         }
@@ -53,8 +53,8 @@ public class A_Star {
      * @param col The column of the node to check.
      * @return The node from the close list if it exists, null otherwise.
      */
-    Node isInCloseList(int row, int col) {
-        for (Node n : close_list) {
+    Nodes isInCloseList(int row, int col) {
+        for (Nodes n : close_list) {
             if (n.getRow() == row && n.getColumn() == col) {
                 return n;
             }
@@ -85,7 +85,7 @@ public class A_Star {
      * @param b The second node.
      * @return The grid distance between the two nodes.
      */
-    static float grid_distance(Node a, Node b)
+    static float grid_distance(Nodes a, Nodes b)
     {
         int dst_x = Math.abs(a.getColumn() - b.getColumn());
         int dst_y = Math.abs(a.getRow() - b.getRow());
@@ -99,17 +99,17 @@ public class A_Star {
     }
 
     /**
-     * Explores the neighbors of a given node, updating the open list with new node to explore.
+     * Explores the neighbors of a given nodes, updating the open list with new nodes to explore.
      *
-     * @param node The node whose neighbors will be explored.
+     * @param nodes The nodes whose neighbors will be explored.
      */
-    void exploreNeightbour(Node node) {
+    void exploreNeighbour(Nodes nodes) {
         int dir_row[] = { -1, 1, 0, 0 };
         int dir_col[] = { 0, 0, -1, 1 };
 
         for (int i = 0; i < 4; i++) {
-            int new_row = dir_row[i] + node.getRow();
-            int new_col = dir_col[i] + node.getColumn();
+            int new_row = dir_row[i] + nodes.getRow();
+            int new_col = dir_col[i] + nodes.getColumn();
 
             if (new_row > maps.getNum_Of_Rows() - 1 || new_row < 0 || new_col > maps.getNum_Of_Column() - 1 || new_col < 0) {
                 continue;
@@ -121,22 +121,22 @@ public class A_Star {
                 continue;
             }
 
-            Node new_node = new Node(new_row, new_col, node);
-            if (isInOpenList(new_node) != null) {
-                new_node = isInOpenList(new_node);
+            Nodes new_nodes = new Nodes(new_row, new_col, nodes);
+            if (isInOpenList(new_nodes) != null) {
+                new_nodes = isInOpenList(new_nodes);
             }
 
-            float path_to_this_neighbour = node.getG() + 1;
+            float path_to_this_neighbour = nodes.getG() + 1;
 
-            if (path_to_this_neighbour < new_node.getG() || isInOpenList(new_node) == null) {
+            if (path_to_this_neighbour < new_nodes.getG() || isInOpenList(new_nodes) == null) {
                 // is mud
 
-                new_node.setG(path_to_this_neighbour);
-                new_node.setH(grid_distance(new_node, endNode));
+                new_nodes.setG(path_to_this_neighbour);
+                new_nodes.setH(grid_distance(new_nodes, endNodes));
 
-                //graphData->changeType(new_node->getRow(), new_node->getCol(), 1);
-                if (isInOpenList(new_node) == null) {
-                    open_list.add(new_node);
+                //graphData->changeType(new_nodes->getRow(), new_nodes->getCol(), 1);
+                if (isInOpenList(new_nodes) == null) {
+                    open_list.add(new_nodes);
                 }
             }
         }
@@ -144,14 +144,14 @@ public class A_Star {
     }
 
     /**
-     * Constructs the path from the end node to the start node by backtracking from the end node.
+     * Constructs the path from the end nodes to the start nodes by backtracking from the end nodes.
      *
-     * @param node The end node of the path.
+     * @param nodes The end nodes of the path.
      * @return A list of Vector2 representing the path from start to end.
      */
-    List<Vector2> showPath(Node node) {
-        Node tmp = node;
-        List<Node> trace_path = new ArrayList<>();
+    List<Vector2> showPath(Nodes nodes) {
+        Nodes tmp = nodes;
+        List<Nodes> trace_path = new ArrayList<>();
         List<Vector2> path = new ArrayList<>();
         while (tmp != null)
         {
@@ -159,7 +159,7 @@ public class A_Star {
             tmp = tmp.getParent();
         }
         for (int i = trace_path.size() - 1; i >= 0; i--) {
-            Node n = trace_path.get(i);
+            Nodes n = trace_path.get(i);
             path.add(new Vector2(n.getColumn(), n.getRow()));
         }
 
@@ -180,27 +180,27 @@ public class A_Star {
      * @return A list of Vector2 representing the shortest path found, or an empty list if no path is found.
      */
     public List<Vector2> findPath(int col,int row, int toCol,int toRow) {
-        startNode = new Node(row,col,null);
-        endNode = new Node(toRow,toCol,null);
+        startNodes = new Nodes(row,col,null);
+        endNodes = new Nodes(toRow,toCol,null);
 
         open_list = new ArrayList<>();
         close_list = new ArrayList<>();
 
-        open_list.add(startNode);
+        open_list.add(startNodes);
         while (!open_list.isEmpty()) {
 
             //Sleep(1);
             int i_min = findMinFNode();
-            Node currentNode = open_list.get(i_min);
+            Nodes currentNodes = open_list.get(i_min);
 
 
-            close_list.add(currentNode);
-            if (currentNode.equal(endNode)) {
-                return showPath(currentNode);
+            close_list.add(currentNodes);
+            if (currentNodes.equal(endNodes)) {
+                return showPath(currentNodes);
             }
 
             open_list.remove(i_min);
-            exploreNeightbour(currentNode);
+            exploreNeighbour(currentNodes);
         }
         return new ArrayList<>();
     }
