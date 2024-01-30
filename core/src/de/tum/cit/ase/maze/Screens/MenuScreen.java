@@ -128,7 +128,7 @@ public class MenuScreen implements Screen {
     // The following methods are part of the Screen interface but are not used in this screen.
     @Override
     public void pause() {
-    }
+     }
 
     @Override
     public void resume() {
