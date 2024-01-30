@@ -25,8 +25,11 @@ public class MenuScreen implements Screen {
 
     private Stage stage;
     private final MazeRunnerGame game;
-    private final Texture backgroundTexture;
-    private final Sprite backgroundSprite;
+
+    Texture t ;
+
+//    private final Texture backgroundTexture;
+//    private final Sprite backgroundSprite;
 
     /**
      * Constructor for MenuScreen.
@@ -37,10 +40,11 @@ public class MenuScreen implements Screen {
         this.game = game;
         initializeStage();
         setupUI();
+        t = new Texture("background.png");
         // Load the background texture and create a sprite
-        backgroundTexture = new Texture(Gdx.files.internal("background.png"));
-        backgroundSprite = new Sprite(backgroundTexture);
-        backgroundSprite.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+//        backgroundTexture = new Texture(Gdx.files.internal("background.png"));
+//        backgroundSprite = new Sprite(backgroundTexture);
+//        backgroundSprite.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 
     /**
@@ -61,7 +65,7 @@ public class MenuScreen implements Screen {
         table.setFillParent(true);
         stage.addActor(table);
 
-        table.add(new Label("Game", game.getSkin(), "title")).padBottom(80).row();
+        table.add(new Label("MAZE RUNNER", game.getSkin(), "title")).padBottom(80).row();
 
         TextButton playButton = new TextButton("Play", game.getSkin());
         TextButton loadGameButton = new TextButton("Load", game.getSkin());
@@ -75,8 +79,8 @@ public class MenuScreen implements Screen {
             }
         });
 
-        table.add(playButton).width(300);
-        table.add(loadGameButton).width(300);
+        table.add(playButton).width(300).padBottom(10).row();
+        table.add(loadGameButton).width(300).padBottom(10).row();
         table.add(exitButton).width(300).row();
 
         playButton.addListener(new ChangeListener() {
@@ -102,12 +106,12 @@ public class MenuScreen implements Screen {
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // Clear the screen
-        // Draw the background sprite
-        game.getSpriteBatch().begin();
-        backgroundSprite.draw(game.getSpriteBatch());
-        game.getSpriteBatch().end();
         stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f)); // Update the stage
-        stage.draw(); // Draw the stage
+        //stage.draw(); // Draw the stage
+        stage.getBatch().begin();
+        stage.getBatch().draw(t,0,0,stage.getWidth(),stage.getHeight());
+        stage.getBatch().end();
+        stage.draw();
     }
 
     /**
@@ -124,7 +128,7 @@ public class MenuScreen implements Screen {
     @Override
     public void dispose() {
         // Dispose of the background texture
-        backgroundTexture.dispose();
+//        backgroundTexture.dispose();
         // Dispose of the stage when the screen is disposed
         stage.dispose();
     }
