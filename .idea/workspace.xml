@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="added background image on menuscreen  - SuperSU">
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="fixed the menu buttons">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" afterDir="false" />
     </list>
@@ -270,7 +270,14 @@
       <option name="project" value="LOCAL" />
       <updated>1706579749346</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixed the menu buttons">
+      <created>1706585668576</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1706585668576</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +307,9 @@
     <MESSAGE value="added Key pickup sound and fixed winscreen music playback overlap with gameMusic - SuperSU" />
     <MESSAGE value="Added some javaDocs" />
     <MESSAGE value="added background image on menuscreen  - SuperSU" />
-    <option name="LAST_COMMIT_MESSAGE" value="added background image on menuscreen  - SuperSU" />
+    <MESSAGE value="Added JavaDoc folder in src" />
+    <MESSAGE value="fixed the menu buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed the menu buttons" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,8 +1,10 @@
 package de.tum.cit.ase.maze.Screens;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -65,7 +67,10 @@ public class MenuScreen implements Screen {
         table.setFillParent(true);
         stage.addActor(table);
 
-        table.add(new Label("MAZE RUNNER", game.getSkin(), "title")).padBottom(80).row();
+        table.add(new Label("MAZE RUNNER", game.getSkin(), "title")).padTop(250).row();
+
+
+
 
         TextButton playButton = new TextButton("Play", game.getSkin());
         TextButton loadGameButton = new TextButton("Load", game.getSkin());
@@ -79,10 +84,16 @@ public class MenuScreen implements Screen {
             }
         });
 
-        table.add(playButton).width(300).padBottom(10).row();
+        table.add(playButton).width(300).padBottom(10).padTop(80).row();
         table.add(loadGameButton).width(300).padBottom(10).row();
         table.add(exitButton).width(300).row();
 
+        BitmapFont font = new BitmapFont(); // You might want to load a custom font instead
+        Label.LabelStyle style = new Label.LabelStyle(font, Color.WHITE);
+        Label copyrightLabel = new Label("© 2024 Wahaj and Supratik", style);
+        copyrightLabel.setFontScale(1f); // Adjust the scale as needed
+
+        table.add(copyrightLabel).bottom().right().padTop(260).padRight(10).expandX();
         playButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
