@@ -24,7 +24,6 @@ public class Maps {
     private SpriteSheet tileSheet; // The sprite sheet used for rendering the map tiles.
 
     private Block entryBlock; // The entry block of the map.
-    private Block exitBlock; // The exit block of the map.
     private Block[][] grid; // The grid representing the map layout.
     private List<Block> emptyBlocks; // A list of empty blocks in the map.
     private Random random; // A random number generator.
@@ -134,6 +133,8 @@ public class Maps {
 
             block.setBlocksType(BlockType.blockCaseType(value));
 
+            // The exit block of the map.
+            Block exitBlock;
             switch (block.getBlocksType()) {
                 case ENTRY_POINT -> entryBlock = block;
                 case EXIT -> exitBlock = block;

@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added some javaDocs">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="added background image on menuscreen  - SuperSU">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/trap.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/trap.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Maps.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -245,7 +245,23 @@
       <option name="project" value="LOCAL" />
       <updated>1706573517281</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="added background image on menuscreen  - SuperSU">
+      <option name="closed" value="true" />
+      <created>1706576551368</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1706576551368</updated>
+    </task>
+    <task id="LOCAL-00016" summary="added background image on menuscreen  - SuperSU">
+      <option name="closed" value="true" />
+      <created>1706576659408</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1706576659408</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +290,8 @@
     <MESSAGE value="Added JavaDoc comments to Screens and utils - SuperSU" />
     <MESSAGE value="added Key pickup sound and fixed winscreen music playback overlap with gameMusic - SuperSU" />
     <MESSAGE value="Added some javaDocs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some javaDocs" />
+    <MESSAGE value="added background image on menuscreen  - SuperSU" />
+    <option name="LAST_COMMIT_MESSAGE" value="added background image on menuscreen  - SuperSU" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
