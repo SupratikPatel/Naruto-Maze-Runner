@@ -29,7 +29,7 @@ public class Player extends GameEntities {
      *
      * @param position The initial position of the player in the game world.
      */
-    public Player(Vector2 position) {
+    public Player(Vector2 position)  {
         super(position, null);
         walk_down = new SpriteSheet(new Texture("player_walk1.png"),4,4);
         walk_down.setPlay(0, 3, 0.1f, true);
