@@ -131,7 +131,7 @@ public class MenuScreen implements Screen {
      */
     @Override
     public void pause() {
-    }
+     }
 
     /**
      * Unused method. Does nothing.
