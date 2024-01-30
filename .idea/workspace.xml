@@ -4,12 +4,31 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="removed unused getters and setters  - SuperSU">
+    <list default="true" id="6a39d06a-2ec4-45d2-9ea2-5a50504eda3e" name="Changes" comment="Added Assests">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Game.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Game.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/BlockType.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/BlockType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Bullet.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Bullet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/GameEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/GameEntities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Ghost1.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Ghost1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Ghost2.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Ghost2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Key.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Key.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Maps.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/GameComponents/Maps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/A_Star.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/Nodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/PathFinding/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameOverScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameOverScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/GameScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MazeRunnerGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MazeRunnerGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/MenuScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/WinScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Screens/WinScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/BoundingBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/BoundingBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SoundManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SoundManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SpriteSheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/core/src/de/tum/cit/ase/maze/Utilities/SpriteSheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop/src/de/tum/cit/ase/maze/DesktopLauncher.java" beforeDir="false" afterPath="$PROJECT_DIR$/desktop/src/de/tum/cit/ase/maze/DesktopLauncher.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +51,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="5th Try" type="f1a62948:ProjectNode" />
+                <item name="5th try" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -52,9 +71,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="UPDATE_TYPE" value="REBASE" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -83,16 +99,16 @@
     "cidr.known.project.marker": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/supra/Downloads/coppyyr/7th try - Copy",
+    "last_opened_file_path": "C:/Users/supra/Desktop/Maze fkin Runner",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -131,9 +147,8 @@
       <workItem from="1706546372888" duration="521000" />
       <workItem from="1706552245228" duration="2315000" />
       <workItem from="1706556844562" duration="2411000" />
-      <workItem from="1706562433282" duration="3828000" />
-      <workItem from="1706568023089" duration="4634000" />
-      <workItem from="1706574329540" duration="907000" />
+      <workItem from="1706562433282" duration="688000" />
+      <workItem from="1706572601550" duration="677000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -239,15 +254,7 @@
       <option name="project" value="LOCAL" />
       <updated>1706560938674</updated>
     </task>
-    <task id="LOCAL-00014" summary="removed unused getters and setters  - SuperSU">
-      <option name="closed" value="true" />
-      <created>1706565273107</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1706565273107</updated>
-    </task>
-    <option name="localTasksCounter" value="15" />
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,11 +282,6 @@
     <MESSAGE value="Added JavaDoc comments to GameComponents and A* Algo - SuperSU" />
     <MESSAGE value="Added JavaDoc comments to Screens and utils - SuperSU" />
     <MESSAGE value="added Key pickup sound and fixed winscreen music playback overlap with gameMusic - SuperSU" />
-    <MESSAGE value="removed unused getters and setters  - SuperSU" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed unused getters and setters  - SuperSU" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <option name="LAST_COMMIT_MESSAGE" value="added Key pickup sound and fixed winscreen music playback overlap with gameMusic - SuperSU" />
   </component>
 </project>

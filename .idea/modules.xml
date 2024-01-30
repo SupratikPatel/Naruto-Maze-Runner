@@ -2,6 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/5th_try.iml" filepath="$PROJECT_DIR$/.idea/modules/5th_try.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/5th_try.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/5th_try.core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/5th_try.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/5th_try.core.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/5th_try.desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/5th_try.desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/desktop/5th_try.desktop.main.iml" filepath="$PROJECT_DIR$/.idea/modules/desktop/5th_try.desktop.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/JAVA.fophn2324infun2324projectworkx-teamutilrandom.iml" filepath="$PROJECT_DIR$/.idea/modules/JAVA.fophn2324infun2324projectworkx-teamutilrandom.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/JAVA.fophn2324infun2324projectworkx-teamutilrandom.core.iml" filepath="$PROJECT_DIR$/.idea/modules/core/JAVA.fophn2324infun2324projectworkx-teamutilrandom.core.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/core/JAVA.fophn2324infun2324projectworkx-teamutilrandom.core.main.iml" filepath="$PROJECT_DIR$/.idea/modules/core/JAVA.fophn2324infun2324projectworkx-teamutilrandom.core.main.iml" />

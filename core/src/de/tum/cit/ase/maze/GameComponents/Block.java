@@ -23,20 +23,49 @@ public class Block {
         this.column = column;
         this.blockType = blockType;
     }
-    //Getter and Setters
+
+    /**
+     * Gets the row position of the block in the maze grid.
+     *
+     * @return the row position of the block
+     */
     public int getRow() {
         return row;
     }
+
+    /**
+     * Gets the column position of the block in the maze grid.
+     *
+     * @return the column position of the block
+     */
     public int getColumn() {
         return column;
     }
+
+    /**
+     * Gets the type of the block (e.g., wall, path).
+     *
+     * @return the type of the block
+     */
     public BlockType getBlocksType() {
         return blockType;
     }
+
+    /**
+     * Sets the type of the block (e.g., wall, path).
+     *
+     * @param blockType the new type of the block
+     */
     public void setBlocksType(BlockType blockType) {
         this.blockType = blockType;
     }
+
+    /**
+     * Creates a bounding box representing the rectangle of the block.
+     *
+     * @return a bounding box representing the rectangle of the block
+     */
     public BoundingBox rectangle(){
-        return new BoundingBox(column*16,row*16,16,16);
+        return new BoundingBox(column * 16, row * 16, 16, 16);
     }
 }

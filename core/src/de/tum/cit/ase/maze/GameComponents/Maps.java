@@ -1,5 +1,4 @@
 package de.tum.cit.ase.maze.GameComponents;
-
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -35,7 +34,7 @@ public class Maps {
      * Constructor for the Maps class.
      * Initializes the map and loads properties from a file.
      *
-     * @param path The path to the properties file.
+     * @param path          The path to the properties file.
      * @param gameElements A list of game elements.
      */
     public Maps(String path, List<GameEntities> gameElements) {
@@ -44,8 +43,8 @@ public class Maps {
     }
 
     /**
-     Initializes the map by creating a new sprite sheet,
-     empty blocks list, random number generator, and position vector.
+     * Initializes the map by creating a new sprite sheet,
+     * empty blocks list, random number generator, and position vector.
      */
     private void initialize() {
         tileSheet = new SpriteSheet(new Texture("basictiles.png"), 15, 8);
@@ -55,9 +54,10 @@ public class Maps {
     }
 
     /**
-     Loads properties from a file and initializes the map grid and game elements.
-     @param path The path to the properties file.
-     @param entities A list of game entities.
+     * Loads properties from a file and initializes the map grid and game elements.
+     *
+     * @param path     The path to the properties file.
+     * @param entities A list of game entities.
      */
     private void loadPropertiesFile(String path, List<GameEntities> entities) {
         Properties property = new Properties();
@@ -78,8 +78,9 @@ public class Maps {
     }
 
     /**
-     Finds the number of rows and columns in the map grid based on the properties file.
-     @param prop The properties loaded from the file.
+     * Finds the number of rows and columns in the map grid based on the properties file.
+     *
+     * @param prop The properties loaded from the file.
      */
     private void findRowsAndColumns(Properties prop) {
         for (java.util.Map.Entry<Object, Object> entry : prop.entrySet()) {
@@ -103,7 +104,7 @@ public class Maps {
     }
 
     /**
-     Initializes the map grid with empty blocks.
+     * Initializes the map grid with empty blocks.
      */
     private void initializeGrid() {
         grid = new Block[Num_Of_Rows][Num_Of_Column];
@@ -116,9 +117,10 @@ public class Maps {
     }
 
     /**
-     Processes a cell entry from the properties file and updates the map grid and game entities accordingly.
-     @param entry The cell entry from the properties file.
-     @param entities A list of game entities.
+     * Processes a cell entry from the properties file and updates the map grid and game entities accordingly.
+     *
+     * @param entry    The cell entry from the properties file.
+     * @param entities A list of game entities.
      */
     private void processCellEntry(java.util.Map.Entry<Object, Object> entry, List<GameEntities> entities) {
         String key = (String) entry.getKey();
@@ -148,20 +150,22 @@ public class Maps {
     }
 
     /**
-     Processes an enemy cell and adds an enemy entity to the game entities list.
-     @param entities A list of game entities.
-     @param block The block representing the enemy cell.
+     * Processes an enemy cell and adds an enemy entity to the game entities list.
+     *
+     * @param entities A list of game entities.
+     * @param block    The block representing the enemy cell.
      */
     private void processEnemyCell(List<GameEntities> entities, Block block) {
         if (random.nextInt(10) <= 3) {
-            entities.add(new Ghost2(new Vector2(block.getColumn() *16, block.getRow() * 16), this));
+            entities.add(new Ghost2(new Vector2(block.getColumn() * 16, block.getRow() * 16), this));
         } else {
             entities.add(new Ghost1(new Vector2(block.getColumn() * 16, block.getRow() * 16), this));
         }
 
     }
+
     /**
-     Populates the list of empty cells in the map grid.
+     * Populates the list of empty cells in the map grid.
      */
     private void populateEmptyCells() {
         for (int row = 0; row < Num_Of_Rows; row++) {
@@ -174,18 +178,20 @@ public class Maps {
     }
 
     /**
-     Returns the block at a specific row and column in the map grid.
-     @param row The row of the block.
-     @param col The column of the block.
-     @return The block at the specified row and column.
+     * Returns the block at a specific row and column in the map grid.
+     *
+     * @param row The row of the block.
+     * @param col The column of the block.
+     * @return The block at the specified row and column.
      */
     public Block getCell(int row, int col) {
         return grid[row][col];
     }
 
     /**
-     Returns a random empty block from the map grid.
-     @return A random empty block.
+     * Returns a random empty block from the map grid.
+     *
+     * @return A random empty block.
      */
     public Block getRandomEmptyCell() {
         int randNum = random.nextInt(emptyBlocks.size());
@@ -193,9 +199,10 @@ public class Maps {
     }
 
     /**
-     Draws the map to the screen.
-     @param batch The batch used for drawing.
-     @param player The player character.
+     * Draws the map to the screen.
+     *
+     * @param batch  The batch used for drawing.
+     * @param player The player character.
      */
     public void draw(Batch batch, Player player) {
         batch.begin();
@@ -210,7 +217,7 @@ public class Maps {
                 if (block.getBlocksType() == null) {
                     drawCell(batch, block, tileSheet.getTexture(65));
                 } else {
-                    //using enhanced switched method
+                    // using enhanced switched method
                     switch (block.getBlocksType()) {
                         case WALL -> drawCell(batch, block, tileSheet.getTexture(15));
                         case ENTRY_POINT, TRAP, ENEMY, KEY -> drawCell(batch, block, tileSheet.getTexture(65));
@@ -223,42 +230,71 @@ public class Maps {
         batch.end();
     }
 
-
     /**
-     Draws a specific cell to the screen.
-     @param batch The batch used for drawing.
-     @param block The block representing the cell.
-     @param textureRegion The texture region used for drawing the cell.
+     * Draws a specific cell to the screen.
+     *
+     * @param batch          The batch used for drawing.
+     * @param block          The block representing the cell.
+     * @param textureRegion  The texture region used for drawing the cell.
      */
     private void drawCell(Batch batch, Block block, TextureRegion textureRegion) {
         batch.draw(textureRegion, position.x + block.getColumn() * CELL_SIZE, position.y + block.getRow() * CELL_SIZE,
                 (float) tileSheet.getWidth() / 2, (float) tileSheet.getHeight() / 2, tileSheet.getWidth(), tileSheet.getHeight(), 1, 1, 0);
     }
 
-    //Getters and Setters
+    // Getters and Setters
+
+    /**
+     * Gets the number of rows in the map grid.
+     *
+     * @return The number of rows in the map grid.
+     */
     public int getNum_Of_Rows() {
         return Num_Of_Rows;
     }
 
+    /**
+     * Gets the number of columns in the map grid.
+     *
+     * @return The number of columns in the map grid.
+     */
     public int getNum_Of_Column() {
         return Num_Of_Column;
     }
 
+    /**
+     * Gets the position of the map in the game world.
+     *
+     * @return The position vector of the map.
+     */
     public Vector2 getPosition() {
         return position;
     }
 
+    /**
+     * Sets the position of the map in the game world.
+     *
+     * @param position The new position vector of the map.
+     */
     public void setPosition(Vector2 position) {
         this.position = position;
     }
 
+    /**
+     * Gets the entry block of the map.
+     *
+     * @return The entry block of the map.
+     */
     public Block getEntryBlock() {
         return entryBlock;
     }
 
+    /**
+     * Gets the count of keys placed in the map.
+     *
+     * @return The count of keys in the map.
+     */
     public int getKeyCount() {
         return keyCount;
     }
-
-
 }

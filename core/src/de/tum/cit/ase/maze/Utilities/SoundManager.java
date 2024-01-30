@@ -57,6 +57,9 @@ public class SoundManager {
         sounds.get("gameMusic").stop();
         sounds.get("gameMusic").loop(0.2f);
     }
+    /**
+     * Stops the menu music and Game Music
+     */
     public void stopMusic(){
         sounds.get("menuMusic").stop();
         sounds.get("gameMusic").stop();

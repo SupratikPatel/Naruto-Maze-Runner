@@ -4,8 +4,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -18,36 +16,44 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import de.tum.cit.ase.maze.Utilities.Manager;
 
+/**
+ * The MenuScreen class is responsible for displaying the main menu of the game.
+ * It extends the LibGDX Screen class and sets up the UI components for the menu.
+ */
 public class MenuScreen implements Screen {
     private Stage stage;
     private final MazeRunnerGame game;
-    private Texture backgroundTexture;
-    private Sprite backgroundSprite;
 
+    /**
+     * Constructor for MenuScreen.
+     *
+     * @param game The game instance associated with this screen.
+     */
     public MenuScreen(MazeRunnerGame game) {
         this.game = game;
         initializeStage();
         setupUI();
-
-        // Load the background texture and create a sprite
-        backgroundTexture = new Texture(Gdx.files.internal("background.png")); // Replace with your image file
-        backgroundSprite = new Sprite(backgroundTexture);
-        backgroundSprite.setSize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
     }
 
+    /**
+     * Initializes the stage for the menu screen.
+     */
     private void initializeStage() {
         OrthographicCamera camera = new OrthographicCamera();
-        camera.zoom = 1.0f;
+        camera.zoom = 1.5f;
         Viewport viewport = new ScreenViewport(camera);
         stage = new Stage(viewport, game.getSpriteBatch());
     }
 
+    /**
+     * Sets up the user interface for the menu screen.
+     */
     private void setupUI() {
         Table table = new Table();
         table.setFillParent(true);
         stage.addActor(table);
 
-        table.add(new Label("Maze Runner", game.getSkin(), "title")).padBottom(100);
+        table.add(new Label("Game", game.getSkin(), "title")).padBottom(80).row();
 
         TextButton playButton = new TextButton("Play", game.getSkin());
         TextButton loadGameButton = new TextButton("Load", game.getSkin());
@@ -82,35 +88,42 @@ public class MenuScreen implements Screen {
         Manager.getInstance().soundManager.playMenuMusic();
     }
 
+    /**
+     * Renders the menu screen.
+     */
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT); // Clear the screen
-
-        // Draw the background sprite
-        game.getSpriteBatch().begin();
-        backgroundSprite.draw(game.getSpriteBatch());
-        game.getSpriteBatch().end();
-
-        // Now draw the stage with the buttons on top of the background
-        stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f));
-        stage.draw();
+        stage.act(Math.min(Gdx.graphics.getDeltaTime(), 1 / 30f)); // Update the stage
+        stage.draw(); // Draw the stage
     }
 
+    /**
+     * Resizes the menu screen.
+     */
     @Override
     public void resize(int width, int height) {
-        stage.getViewport().update(width, height, true);
+        stage.getViewport().update(width, height, true); // Update the stage viewport on resize
     }
 
+    /**
+     * Disposes of the menu screen when it is no longer needed.
+     */
     @Override
     public void dispose() {
-        backgroundTexture.dispose();
+        // Dispose of the stage when screen is disposed
         stage.dispose();
     }
 
+    /**
+     * Shows the menu screen.
+     */
     @Override
     public void show() {
+        // Set the input processor so the stage can receive input events
         Gdx.input.setInputProcessor(stage);
     }
+
 
     // The following methods are part of the Screen interface but are not used in this screen.
     @Override

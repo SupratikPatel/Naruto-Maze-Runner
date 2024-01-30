@@ -1,6 +1,5 @@
 package de.tum.cit.ase.maze.Screens;
 
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
@@ -100,27 +99,41 @@ public class GameOverScreen implements Screen {
         stage.getViewport().update(width, height, true); // Update the stage viewport on resize
     }
 
+    /**
+     * Disposes of resources used by the screen.
+     */
     @Override
     public void dispose() {
-        // Dispose of the stage when screen is disposed
+        // Dispose of the stage when the screen is disposed
         stage.dispose();
     }
 
+    /**
+     * Called when the screen is shown.
+     * Sets the input processor so the stage can receive input events.
+     */
     @Override
     public void show() {
-        // Set the input processor so the stage can receive input events
-        Gdx.input.setInputProcessor(stage);
+        Gdx.input.setInputProcessor(stage); // Set the input processor so the stage can receive input events
     }
 
-    // The following methods are part of the Screen interface but are not used in this screen.
+    /**
+     * Unused method from the Screen interface.
+     */
     @Override
     public void pause() {
     }
 
+    /**
+     * Unused method from the Screen interface.
+     */
     @Override
     public void resume() {
     }
 
+    /**
+     * Unused method from the Screen interface.
+     */
     @Override
     public void hide() {
     }
