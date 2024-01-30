@@ -25,8 +25,8 @@ public class MenuScreen implements Screen {
 
     private Stage stage;
     private final MazeRunnerGame game;
-    private Texture backgroundTexture;
-    private Sprite backgroundSprite;
+    private final Texture backgroundTexture;
+    private final Sprite backgroundSprite;
 
     /**
      * Constructor for MenuScreen.
