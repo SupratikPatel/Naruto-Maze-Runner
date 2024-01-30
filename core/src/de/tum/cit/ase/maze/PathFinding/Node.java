@@ -13,7 +13,7 @@ public class Node {
     /**
      * Constructs a new Node with a specified row, column, and parent node.
      *
-     * @param row The row of the node in the grid.
+     * @param row    The row of the node in the grid.
      * @param Column The column of the node in the grid.
      * @param parent The parent node in the path.
      */
@@ -27,7 +27,6 @@ public class Node {
         distance = Integer.MAX_VALUE;
     }
 
-    //Getters and Setters
     /**
      * Returns the 'f' cost value, which is the sum of the 'g' and 'h' cost values.
      *
@@ -36,6 +35,7 @@ public class Node {
     public float getF() {
         return g + h;
     }
+
     /**
      * Returns the 'g' cost value, which is the cost from the start node to this node.
      *
@@ -45,31 +45,58 @@ public class Node {
         return g;
     }
 
+    /**
+     * Sets the 'g' cost value.
+     *
+     * @param g The new 'g' cost value.
+     */
     public void setG(float g) {
         this.g = g;
     }
 
-
+    /**
+     * Sets the 'h' cost value.
+     *
+     * @param h The new 'h' cost value.
+     */
     public void setH(float h) {
         this.h = h;
     }
 
+    /**
+     * Gets the parent node in the path.
+     *
+     * @return The parent node.
+     */
     public Node getParent() {
         return parent;
     }
 
-
+    /**
+     * Gets the row of the node in the grid.
+     *
+     * @return The row of the node.
+     */
     public int getRow() {
         return Row;
     }
 
-
+    /**
+     * Gets the column of the node in the grid.
+     *
+     * @return The column of the node.
+     */
     public int getColumn() {
         return Column;
     }
 
-
-    public boolean equal(Node n){
+    /**
+     * Checks if two nodes are equal based on their row and column.
+     *
+     * @param n The node to compare.
+     * @return True if the nodes are equal, false otherwise.
+     */
+    public boolean equal(Node n) {
         return n.Row == Row && n.Column == Column;
     }
-};
+}

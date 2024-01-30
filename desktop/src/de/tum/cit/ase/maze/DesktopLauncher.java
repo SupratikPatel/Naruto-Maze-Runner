@@ -11,6 +11,13 @@ import games.spooky.gdx.nativefilechooser.desktop.DesktopFileChooser;
  * It sets up the game window and launches the game using LibGDX framework.
  */
 public class  DesktopLauncher  {
+
+	/**
+	 * using Default Constructor for DesktopLauncher
+	 */
+	public DesktopLauncher() {
+	}
+
 	/**
 	 * The main method sets up the configuration for the game window and starts the application.
 	 *

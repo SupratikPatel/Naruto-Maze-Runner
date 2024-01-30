@@ -5,12 +5,32 @@ package de.tum.cit.ase.maze.GameComponents;
  * Each enum constant represents a distinct type of block within the game.
  */
 public enum BlockType {
-    WALL,           // Represents a wall block that players cannot pass through.
-    ENTRY_POINT,    // Represents the starting point of the maze.
-    EXIT,           // Represents the exit point of the maze.
-    TRAP,           // Represents a trap block that may hinder the player.
-    ENEMY,          // Represents a block containing an enemy.
-    KEY;            // Represents a block containing a key to unlock parts of the maze.
+    /**
+     Represents a wall block that players cannot pass through.
+     */
+    WALL,
+    /**
+     Represents the starting point of the maze.
+     */
+    ENTRY_POINT,
+   /**
+     Represents the exit point of the maze.
+    */
+    EXIT,
+    /**
+     Represents a trap block that may hinder the player.
+    */
+     TRAP,
+
+
+    /**
+    * Represents a block containing an enemy.
+    */
+     ENEMY,
+    /**
+     * Represents a block containing a key to unlock parts of the maze.
+     */
+    KEY;
 
     /**
      * Returns the corresponding BlockType based on an integer value.

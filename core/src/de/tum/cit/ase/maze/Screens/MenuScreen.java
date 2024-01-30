@@ -1,5 +1,4 @@
 package de.tum.cit.ase.maze.Screens;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -17,15 +16,16 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import de.tum.cit.ase.maze.Utilities.Manager;
 
 /**
- * The MenuScreen class is responsible for displaying the main menu of the game.
- * It extends the LibGDX Screen class and sets up the UI components for the menu.
+ * The `MenuScreen` class is responsible for displaying the main menu of the game.
+ * It extends the LibGDX `Screen` class and sets up the UI components for the menu.
  */
 public class MenuScreen implements Screen {
+
     private Stage stage;
     private final MazeRunnerGame game;
 
     /**
-     * Constructor for MenuScreen.
+     * Constructor for `MenuScreen`.
      *
      * @param game The game instance associated with this screen.
      */
@@ -111,7 +111,7 @@ public class MenuScreen implements Screen {
      */
     @Override
     public void dispose() {
-        // Dispose of the stage when screen is disposed
+        // Dispose of the stage when the screen is disposed
         stage.dispose();
     }
 
@@ -124,16 +124,25 @@ public class MenuScreen implements Screen {
         Gdx.input.setInputProcessor(stage);
     }
 
+    // The following methods are part of the `Screen` interface but are not used in this screen.
 
-    // The following methods are part of the Screen interface but are not used in this screen.
+    /**
+     * Unused method. Does nothing.
+     */
     @Override
     public void pause() {
     }
 
+    /**
+     * Unused method. Does nothing.
+     */
     @Override
     public void resume() {
     }
 
+    /**
+     * Unused method. Does nothing.
+     */
     @Override
     public void hide() {
     }

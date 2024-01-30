@@ -1,5 +1,4 @@
 package de.tum.cit.ase.maze.Screens;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
@@ -55,7 +54,7 @@ public class WinScreen implements Screen {
         goToMenuButton.addListener(new ChangeListener() {
             @Override
             public void changed(ChangeEvent event, Actor actor) {
-                game.goToMenu(); // Change to the menu screen when button is pressed
+                game.goToMenu(); // Change to the menu screen when the button is pressed
             }
         });
     }
@@ -88,7 +87,7 @@ public class WinScreen implements Screen {
      */
     @Override
     public void dispose() {
-        // Dispose of the stage when screen is disposed
+        // Dispose of the stage when the screen is disposed
         stage.dispose();
     }
 
@@ -102,14 +101,24 @@ public class WinScreen implements Screen {
     }
 
     // The following methods are part of the Screen interface but are not used in this screen.
+
+    /**
+     * Unused method. Does nothing.
+     */
     @Override
     public void pause() {
     }
 
+    /**
+     * Unused method. Does nothing.
+     */
     @Override
     public void resume() {
     }
 
+    /**
+     * Unused method. Does nothing.
+     */
     @Override
     public void hide() {
     }

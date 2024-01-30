@@ -5,6 +5,9 @@ package de.tum.cit.ase.maze.Utilities;
  * This class is used for collision detection purposes.
  */
 public class BoundingBox {
+    /**
+     * These are the attributes of BoundingBox
+     */
     public float x, y, w, h;
 
     /**

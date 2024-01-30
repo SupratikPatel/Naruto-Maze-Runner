@@ -1,5 +1,4 @@
 package de.tum.cit.ase.maze.GameComponents;
-
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.Vector2;
@@ -10,15 +9,26 @@ import de.tum.cit.ase.maze.Utilities.BoundingBox;
  * It contains common properties and methods that all game entities share.
  */
 public class GameEntities {
-    protected Vector2 position; // The position of the entity in the game world
-    Texture texture; // The texture of the entity
-    public boolean destroyFlAG = false; // Flag to indicate whether the entity should be destroyed
+    /**
+     * Flag to indicate whether the entity should be destroyed.
+     */
+    public boolean destroyFlAG;
+
+    /**
+     * The position of the entity in the game world.
+     */
+    protected Vector2 position;
+
+    /**
+     * The texture of the entity.
+     */
+    Texture texture;
 
     /**
      * Constructs a new game entity with the specified position and texture.
      *
      * @param position The position of the entity in the game world.
-     * @param texture The texture of the entity.
+     * @param texture  The texture of the entity.
      */
     public GameEntities(Vector2 position, Texture texture) {
         this.position = position;

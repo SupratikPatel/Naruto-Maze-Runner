@@ -1,5 +1,4 @@
 package de.tum.cit.ase.maze.PathFinding;
-
 import com.badlogic.gdx.math.Vector2;
 import de.tum.cit.ase.maze.GameComponents.BlockType;
 import de.tum.cit.ase.maze.GameComponents.Maps;
@@ -28,7 +27,12 @@ public class A_Star {
         this.maps = maps;
     }
 
-    public Maps getMap(){
+    /**
+     * Gets the reference to the game map.
+     *
+     * @return The game map.
+     */
+    public Maps getMap() {
         return maps;
     }
 
@@ -46,6 +50,7 @@ public class A_Star {
         }
         return null;
     }
+
     /**
      * Checks if a node is in the close list based on its row and column.
      *
@@ -78,6 +83,7 @@ public class A_Star {
         }
         return index;
     }
+
     /**
      * Calculates the grid distance between two nodes.
      *
@@ -85,17 +91,14 @@ public class A_Star {
      * @param b The second node.
      * @return The grid distance between the two nodes.
      */
-    static float grid_distance(Node a, Node b)
-    {
+    static float grid_distance(Node a, Node b) {
         int dst_x = Math.abs(a.getColumn() - b.getColumn());
         int dst_y = Math.abs(a.getRow() - b.getRow());
 
-        if (dst_x > dst_y)
-        {
+        if (dst_x > dst_y) {
             return 5 * dst_y + 3 * (dst_x - dst_y);
         }
         return 5 * dst_x + 3 * (dst_y - dst_x);
-
     }
 
     /**
@@ -103,7 +106,7 @@ public class A_Star {
      *
      * @param node The node whose neighbors will be explored.
      */
-    void exploreNeightbour(Node node) {
+    void exploreNeighbour(Node node) {
         int dir_row[] = { -1, 1, 0, 0 };
         int dir_col[] = { 0, 0, -1, 1 };
 
@@ -114,7 +117,7 @@ public class A_Star {
             if (new_row > maps.getNum_Of_Rows() - 1 || new_row < 0 || new_col > maps.getNum_Of_Column() - 1 || new_col < 0) {
                 continue;
             }
-            if (maps.getCell(new_row,new_col).getBlocksType() == BlockType.WALL) {
+            if (maps.getCell(new_row, new_col).getBlocksType() == BlockType.WALL) {
                 continue;
             }
             if (isInCloseList(new_row, new_col) != null) {
@@ -134,13 +137,12 @@ public class A_Star {
                 new_node.setG(path_to_this_neighbour);
                 new_node.setH(grid_distance(new_node, endNode));
 
-                //graphData->changeType(new_node->getRow(), new_node->getCol(), 1);
+                // graphData->changeType(new_node->getRow(), new_node->getCol(), 1);
                 if (isInOpenList(new_node) == null) {
                     open_list.add(new_node);
                 }
             }
         }
-
     }
 
     /**
@@ -153,8 +155,7 @@ public class A_Star {
         Node tmp = node;
         List<Node> trace_path = new ArrayList<>();
         List<Vector2> path = new ArrayList<>();
-        while (tmp != null)
-        {
+        while (tmp != null) {
             trace_path.add(tmp);
             tmp = tmp.getParent();
         }
@@ -163,7 +164,7 @@ public class A_Star {
             path.add(new Vector2(n.getColumn(), n.getRow()));
         }
 
-        if(!path.isEmpty()){
+        if (!path.isEmpty()) {
             path.remove(0);
         }
 
@@ -179,9 +180,9 @@ public class A_Star {
      * @param toRow The row of the end position.
      * @return A list of Vector2 representing the shortest path found, or an empty list if no path is found.
      */
-    public List<Vector2> findPath(int col,int row, int toCol,int toRow) {
-        startNode = new Node(row,col,null);
-        endNode = new Node(toRow,toCol,null);
+    public List<Vector2> findPath(int col, int row, int toCol, int toRow) {
+        startNode = new Node(row, col, null);
+        endNode = new Node(toRow, toCol, null);
 
         open_list = new ArrayList<>();
         close_list = new ArrayList<>();
@@ -189,10 +190,9 @@ public class A_Star {
         open_list.add(startNode);
         while (!open_list.isEmpty()) {
 
-            //Sleep(1);
+            // Sleep(1);
             int i_min = findMinFNode();
             Node currentNode = open_list.get(i_min);
-
 
             close_list.add(currentNode);
             if (currentNode.equal(endNode)) {
@@ -200,9 +200,8 @@ public class A_Star {
             }
 
             open_list.remove(i_min);
-            exploreNeightbour(currentNode);
+            exploreNeighbour(currentNode);
         }
         return new ArrayList<>();
     }
-
 }

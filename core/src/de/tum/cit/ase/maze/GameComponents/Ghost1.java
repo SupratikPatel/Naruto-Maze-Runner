@@ -1,5 +1,4 @@
 package de.tum.cit.ase.maze.GameComponents;
-
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
@@ -105,10 +104,20 @@ public class Ghost1 extends Enemy {
 
     // Getter and setter methods for the ghost's properties...
 
+    /**
+     * Gets the player that the ghost is targeting.
+     *
+     * @return The player that the ghost is targeting.
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * Sets the player that the ghost is targeting.
+     *
+     * @param player The player to be targeted by the ghost.
+     */
     public void setPlayer(Player player) {
         this.player = player;
     }

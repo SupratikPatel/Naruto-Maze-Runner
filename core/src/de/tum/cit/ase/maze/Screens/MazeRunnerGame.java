@@ -17,7 +17,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 /**
- * The MazeRunnerGame class represents the core of the Maze Runner game.
+ * The `MazeRunnerGame` class represents the core of the Maze Runner game.
  * It manages the screens and global resources like SpriteBatch and Skin.
  */
 public class MazeRunnerGame extends Game {
@@ -48,6 +48,7 @@ public class MazeRunnerGame extends Game {
         this.fileChooser = fileChooser;
         runnerGame = this;
     }
+
     /**
      * Called when the game is created. Initializes the SpriteBatch and Skin.
      */
@@ -79,6 +80,7 @@ public class MazeRunnerGame extends Game {
         }
         this.setScreen(gameScreen);
     }
+
     /**
      * Loads a game from a selected map file.
      */
@@ -108,6 +110,8 @@ public class MazeRunnerGame extends Game {
 
     /**
      * Switches to the victory screen.
+     ** @param score The player's score.
+     *  @param time  The time taken to complete the game.
      */
     public void goToVictoryScreen(int score,float time){
         if (winScreen == null) {
@@ -118,6 +122,8 @@ public class MazeRunnerGame extends Game {
 
     /**
      * Switches to the game-over screen.
+     *@param score The player's score.
+     * @param time  The time taken to complete the game.
      */
     public void goToGameOverScreen(int score,float time){
         if (gameOverScreen == null) {
@@ -158,14 +164,22 @@ public class MazeRunnerGame extends Game {
         skin.dispose(); // Dispose the skin
 
     }
-    // Getter methods
+
+    /**
+     * Getter method for the game's skin.
+     *
+     * @return The UI skin for the game.
+     */
     public Skin getSkin() {
         return skin;
     }
 
-
+    /**
+     * Getter method for the game's SpriteBatch.
+     *
+     * @return The SpriteBatch used for rendering.
+     */
     public SpriteBatch getSpriteBatch() {
         return spriteBatch;
     }
-
 }
