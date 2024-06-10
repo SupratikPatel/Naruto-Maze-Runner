@@ -31,17 +31,17 @@ public class Player extends GameEntities {
      */
     public Player(Vector2 position)  {
         super(position, null);
-        walk_down = new SpriteSheet(new Texture("player_walk1.png"),4,4);
+        walk_down = new SpriteSheet(new Texture("player_walk.png"),4,4);
         walk_down.setPlay(0, 3, 0.1f, true);
 
-        walk_right = new SpriteSheet(new Texture("player_walk1.png"),4,4);
-        walk_right.setPlay(4, 7, 0.1f, true);
+        walk_right = new SpriteSheet(new Texture("player_walk.png"),4,4);
+        walk_right.setPlay(8, 11, 0.1f, true);
 
-        walk_up = new SpriteSheet(new Texture("player_walk1.png"),4,4);
-        walk_up.setPlay(8, 11, 0.1f, true);
+        walk_up = new SpriteSheet(new Texture("player_walk.png"),4,4);
+        walk_up.setPlay(12, 15, 0.1f, true);
 
-        walk_left = new SpriteSheet(new Texture("player_walk1.png"),4,4);
-        walk_left.setPlay(12, 15, 0.1f, true);
+        walk_left = new SpriteSheet(new Texture("player_walk.png"),4,4);
+        walk_left.setPlay(4, 7, 0.1f, true);
 
 
         //Our Own Player Design
@@ -75,22 +75,22 @@ public class Player extends GameEntities {
     //Players movement when arrow keys are released
     public void Key_Release(int keystroke){
         switch(keystroke) {
-            case Input.Keys.LEFT:
+            case Input.Keys.A:
                 if (direction.x == -1) {
                     direction.x = 0 ;
                 }
                 break;
-            case Input.Keys.RIGHT:
+            case Input.Keys.D:
                 if (direction.x == 1) {
                     direction.x = 0;
                 }
                 break;
-            case Input.Keys.UP:
+            case Input.Keys.W:
                 if (direction.y == 1) {
                     direction.y = 0;
                 }
                 break;
-            case Input.Keys.DOWN:
+            case Input.Keys.S:
                 if (direction.y == -1) {
                     direction.y = 0;
                 }
@@ -108,22 +108,22 @@ public class Player extends GameEntities {
     //Players movement when arrow keys are pressed
     public void Key_Pressed(int keystroke){
         switch (keystroke) {
-            case Input.Keys.LEFT -> {
+            case Input.Keys.A -> {
                 direction = new Vector2(-1, 0);
                 sheet = walk_left;
                 facing_direction = new Vector2(direction.x, direction.y);
             }
-            case Input.Keys.RIGHT -> {
+            case Input.Keys.D -> {
                 direction = new Vector2(1, 0);
                 sheet = walk_right;
                 facing_direction = new Vector2(direction.x, direction.y);
             }
-            case Input.Keys.UP -> {
+            case Input.Keys.W -> {
                 direction = new Vector2(0, 1);
                 sheet = walk_up;
                 facing_direction = new Vector2(direction.x, direction.y);
             }
-            case Input.Keys.DOWN -> {
+            case Input.Keys.S -> {
                 direction = new Vector2(0, -1);
                 sheet = walk_down;
                 facing_direction = new Vector2(direction.x, direction.y);
